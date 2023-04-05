@@ -1,0 +1,11 @@
+
+supabase:
+  projectId: tdvmeydbgpulquximxzc
+  anonKey: ${SUPABASE_ANON_KEY}
+  databasePassword: ${SUPABASE_DATABASE_PW}
+  jwtSecret: ${SUPABASE_JWT_SECRET}
+  successfulLoginRedirectPage: /account
+  passwordRecoveryPage: /updatePassword
+  unauthenticatedPage: /unauthenticated
+  unauthorizedPage: /unauthorizedPage
+  sslOnly: false
