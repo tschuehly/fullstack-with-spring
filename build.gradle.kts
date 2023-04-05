@@ -17,7 +17,6 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -25,10 +24,11 @@ dependencies {
     implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.springframework.security:spring-security-test")
 
-    implementation("com.github.tschuehly:supabase-security-spring-boot-starter:-SNAPSHOT")
-    implementation("com.github.tschuehly:thymeleaf-view-component:0.5.0")
+//    implementation("com.github.tschuehly:thymeleaf-view-component:0.5.0")
+        implementation("de.tschuehly:thymeleaf-view-component")
+//    implementation("com.github.tschuehly:supabase-security-spring-boot-starter:d45a18dbeb")
+    implementation("de.tschuehly:supabase-security-spring-boot-starter")
 }
 
 tasks.withType<KotlinCompile> {

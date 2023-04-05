@@ -1,4 +1,5 @@
-
+viewcomponent:
+  localDevelopment: true
 supabase:
   projectId: tdvmeydbgpulquximxzc
   anonKey: ${SUPABASE_ANON_KEY}
@@ -9,3 +10,9 @@ supabase:
   unauthenticatedPage: /unauthenticated
   unauthorizedPage: /unauthorizedPage
   sslOnly: false
+
+  public:
+    get:
+      - "/"
+      - "/error"
+      - /unauthenticated
