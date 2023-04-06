@@ -1,6 +1,6 @@
 <!DOCTYPE html >
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:view="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +32,9 @@
 
 
 
+<!--/*@thymesVar id="sidebarActiveTab" type="de.tschuehly.rapidfullstackdemo.web.layout.sidebar.SidebarViewComponent.ActiveTab"*/-->
+
+
 
 
 <div view:component="sidebarViewComponent.render(sidebarActiveTab)"></div>
@@ -41,7 +44,6 @@
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <!-- Desktop Header -->
     <div view:component="headerViewComponent"></div>
-
 
 
     <div class="w-full overflow-x-hidden border-t flex flex-col">

@@ -10,38 +10,18 @@
         </button>
     </div>
     <!--/*@thymesVar id="activeTab" type="de.tschuehly.rapidfullstackdemo.web.layout.sidebar.SidebarViewComponent.ActiveTab"*/-->
-    <div th:text="${activeTab.name == 'Dashboard'}"></div>
-    
+    <!--/*@thymesVar id="tab" type="de.tschuehly.rapidfullstackdemo.web.layout.sidebar.SidebarViewComponent.ActiveTab"*/-->
+
+
     <nav class="text-white text-base font-semibold pt-3">
-        <a href="/" class="flex items-center  text-white py-4 pl-6 nav-item"
-           th:classappend="${activeTab == T(de.tschuehly.rapidfullstackdemo.web.layout.sidebar.SidebarViewComponent.ActiveTab).Dashboard ? 'active-nav-link' : ' opacity-75 hover:opacity-100 '}">
-            <i class="fas fa-tachometer-alt mr-3"></i>
-            Dashboard
-        </a>
-        <a href="blank.html" class="flex items-center text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-            Blank Page
-        </a>
-        <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-            <i class="fas fa-table mr-3"></i>
-            Tables
-        </a>
-        <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-            <i class="fas fa-align-left mr-3"></i>
-            Forms
-        </a>
-        <a href="tabs.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-            <i class="fas fa-tablet-alt mr-3"></i>
-            Tabbed Content
-        </a>
-        <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-            <i class="fas fa-calendar mr-3"></i>
-            Calendar
-        </a>
+        <th:block th:each="tab : ${T(de.tschuehly.rapidfullstackdemo.web.layout.sidebar.SidebarViewComponent.ActiveTab).values()}">
+            <a th:href="${tab.href}" class="flex items-center  text-white py-4 pl-6 nav-item"
+               th:classappend="${tab == activeTab ? 'active-nav-link' : ' opacity-75 hover:opacity-100 '}">
+                <i class="fas mr-3" th:classappend="${tab.icon}"></i>
+                <span th:text="${tab.displayName}"></span>
+            </a>
+        </th:block>
     </nav>
-    <a href="#" class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
-        <i class="fas fa-arrow-circle-up mr-3"></i>
-        Upgrade to Pro!
-    </a>
+
 </aside>
 </html>
