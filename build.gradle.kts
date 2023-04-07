@@ -27,8 +27,8 @@ dependencies {
 
 //    implementation("com.github.tschuehly:thymeleaf-view-component:0.5.0")
         implementation("de.tschuehly:thymeleaf-view-component")
-//    implementation("com.github.tschuehly:supabase-security-spring-boot-starter:d45a18dbeb")
-    implementation("de.tschuehly:supabase-security-spring-boot-starter")
+    //implementation("com.github.tschuehly:supabase-security-spring-boot-starter:d45a18dbeb")
+ //   implementation("de.tschuehly:supabase-security-spring-boot-starter")
 }
 
 tasks.withType<KotlinCompile> {

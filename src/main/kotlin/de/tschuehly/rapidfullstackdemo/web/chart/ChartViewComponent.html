@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<script src="/js/chart_2.9.3.min.js"></script>
+<!--/*@thymesVar id="barchartDetails" type="de.tschuehly.rapidfullstackdemo.web.chart.ChartViewComponent.ChartDetails"*/-->
+<canvas id="barchart" th:width="${barchartDetails.width}" th:height="${barchartDetails.height}">
+    <script th:inline="javascript">
+        new Chart(document.currentScript.parentElement, {
+            type: /*[[${barchartDetails.type}]]*/'',
+            data: {
+                labels: /*[[${barchartDetails.labels}]]*/ [],
+                datasets: [{
+                    label: /*[[${barchartDetails.chartLabel}]]*/ '',
+                    data: /*[[${barchartDetails.data}]]*/ [],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+    </script>
+</canvas>
+</html>
