@@ -1,4 +1,4 @@
-package de.tschuehly.rapidfullstackdemo.web.layout.sidebar
+package de.tschuehly.rapidfullstackdemo.web.component.layout.sidebar
 
 
 import de.tschuehly.thymeleafviewcomponent.ViewComponent

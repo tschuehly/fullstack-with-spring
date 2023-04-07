@@ -8,7 +8,7 @@
     <title>Tailwind Admin Template</title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
-
+    <script src="https://unpkg.com/htmx.org@1.8.6"></script>
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
@@ -26,13 +26,7 @@
 <body class="bg-gray-100 font-family-karla flex">
 
 
-
-
-
-
-
-
-<!--/*@thymesVar id="sidebarActiveTab" type="de.tschuehly.rapidfullstackdemo.web.layout.sidebar.SidebarViewComponent.ActiveTab"*/-->
+<!--/*@thymesVar id="sidebarActiveTab" type="de.tschuehly.rapidfullstackdemo.web.component.layout.sidebar.SidebarViewComponent.ActiveTab"*/-->
 
 
 
@@ -60,12 +54,37 @@
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0">
+
                     <p class="text-xl pb-3 flex items-center">
                         <i class="fas fa-check mr-3"></i> Resolved Reports
                     </p>
-                    <div class="p-6 bg-white">
-                        <div view:component="chartViewComponent.render(resolvedReportChart)"></div>
+
+
+
+
+
+
+
+
+
+                    <div class="flex flex-row flex-wrap gap-4">
+                        <button  th:each="label : ${labelList}"
+                                 class="bg-blue-600 rounded-lg p-2"
+                                 th:text="${label}"
+                                 th:attr="hx-get=@{/lineChartComponent(name=${label})}"
+                                 hx-target="#lineChart"></button>
                     </div>
+
+
+
+
+
+
+
+                    <div class="p-6 bg-white" id="lineChart">
+
+                    </div>
+
                 </div>
             </div>
 
@@ -146,7 +165,7 @@
 </div>
 
 <!-- AlpineJS -->
-<script src="/js/AlpineJS_2.8.2.min.js" defer></script>
+<script src="/js/alpineJS_2.8.2.min.js" defer></script>
 <!-- Font Awesome -->
 <script src="/js/fontAwesome_5.13.0_all.min.js"></script>
 </body>

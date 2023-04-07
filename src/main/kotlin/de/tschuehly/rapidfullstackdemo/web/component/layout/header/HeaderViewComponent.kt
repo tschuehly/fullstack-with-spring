@@ -1,4 +1,4 @@
-package de.tschuehly.rapidfullstackdemo.web.layout.header
+package de.tschuehly.rapidfullstackdemo.web.component.layout.header
 
 
 import de.tschuehly.thymeleafviewcomponent.ViewComponent

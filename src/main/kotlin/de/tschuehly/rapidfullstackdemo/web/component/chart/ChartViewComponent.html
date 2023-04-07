@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 
 <script src="/js/chart_2.9.3.min.js"></script>
-<!--/*@thymesVar id="barchartDetails" type="de.tschuehly.rapidfullstackdemo.web.chart.ChartViewComponent.ChartDetails"*/-->
+<!--/*@thymesVar id="barchartDetails" type="de.tschuehly.rapidfullstackdemo.web.component.chart.ChartViewComponent.ChartDetails"*/-->
 <canvas id="barchart" th:width="${barchartDetails.width}" th:height="${barchartDetails.height}">
     <script th:inline="javascript">
         new Chart(document.currentScript.parentElement, {

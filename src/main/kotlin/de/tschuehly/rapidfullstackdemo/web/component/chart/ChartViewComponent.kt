@@ -1,4 +1,4 @@
-package de.tschuehly.rapidfullstackdemo.web.chart
+package de.tschuehly.rapidfullstackdemo.web.component.chart
 
 import de.tschuehly.thymeleafviewcomponent.ViewComponent
 import de.tschuehly.thymeleafviewcomponent.ViewContext
