@@ -16,3 +16,7 @@ supabase:
       - "/"
       - "/error"
       - /unauthenticated
+spring:
+  mvc:
+    format:
+      date: yyyy-MM-dd

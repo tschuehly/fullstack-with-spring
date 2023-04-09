@@ -14,20 +14,20 @@ class WebAnalyticAspect(
     val analyticsService: AnalyticsService
 ) {
     val componentRenderCountMap: MutableMap<String, Int> = mutableMapOf()
-
-    @Around(
-        "execution(* org.springframework.web.servlet.DispatcherServlet.render(..)) "
+//
+//    @Around(
+//        "execution(* service(..)) &&"+
 //                "target(org.springframework.web.servlet.DispatcherServlet)"
-    )
-    fun aroundViewRender(joinPoint: ProceedingJoinPoint): Any? {
-        var returnValue: Any? = null
-        val elapsed = measureNanoTime {
-            returnValue = joinPoint.proceed()
-        }
-        println("Component : ${joinPoint.`this`.javaClass.simpleName.substringBefore("$$")} took $elapsed ns to render ")
-        return returnValue
-
-    }
+//    )
+//    fun aroundViewRender(joinPoint: ProceedingJoinPoint): Any? {
+//        var returnValue: Any? = null
+//        val elapsed = measureNanoTime {
+//            returnValue = joinPoint.proceed()
+//        }
+//        println("Component : ${joinPoint.`this`.javaClass.simpleName.substringBefore("$$")} took $elapsed ns to render ")
+//        return returnValue
+//
+//    }
 
     @Around(
         "execution(* render(..)) && " +
@@ -53,7 +53,3 @@ class WebAnalyticAspect(
     }
 
 }
-
-//@Configuration
-//@EnableLoadTimeWeaving
-//class AspectConfig{}

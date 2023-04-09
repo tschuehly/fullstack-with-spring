@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<div class="bg-white overflow-auto">
+    <table class="min-w-full bg-white">
+        <thead class="bg-gray-800 text-white">
+        <tr>
+            <th th:each="header : ${headerList}"
+                th:text="${header}"
+                class="text-left py-3 px-4 uppercase font-semibold text-sm"></th>
+        </tr>
+        </thead>
+        <tbody class="text-gray-700">
+        <tr th:each="tableRow, index : ${tableData}"
+            th:classappend="${index.even}? 'bg-gray-200'">
+            <td th:each="tableCell : ${tableRow}"
+                th:text="${tableCell}"
+                class="text-left py-3 px-4" ></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>
