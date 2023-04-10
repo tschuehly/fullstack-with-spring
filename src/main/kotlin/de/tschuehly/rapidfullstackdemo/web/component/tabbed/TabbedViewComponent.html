@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org" xmlns:view="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tabbed View</title></head>
+<th:block th:insert="~{commonhead}"></th:block>
+<body class="bg-gray-100 font-family-karla flex">
+<div view:component="sidebarViewComponent.render(sidebarActiveTab)"></div>
+<div class="w-full flex flex-col h-screen overflow-y-hidden">
+    <div view:component="headerViewComponent"></div>
+
+
+    <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+        <main class="w-full flex-grow p-6">
+            <h1 class="text-3xl text-black pb-6">Tabbed Content</h1>
+
+            <div view:component="alpineTabViewComponent.render(alpineTabs)"></div>
+        </main>
+
+        <footer class="w-full bg-white text-right p-4">
+            Built by <a target="_blank" href="https://davidgrzyb.com" class="underline">David Grzyb</a>.
+        </footer>
+    </div>
+</div>
+</body>
+</html>
