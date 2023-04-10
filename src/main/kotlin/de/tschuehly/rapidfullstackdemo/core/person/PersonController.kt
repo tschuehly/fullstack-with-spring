@@ -1,5 +1,6 @@
 package de.tschuehly.rapidfullstackdemo.core.person
 
+import de.tschuehly.rapidfullstackdemo.common.ApiConfig
 import de.tschuehly.rapidfullstackdemo.web.component.form.person.PersonFormViewComponent
 import de.tschuehly.rapidfullstackdemo.web.component.toast.ToastViewComponent
 import de.tschuehly.thymeleafviewcomponent.ViewContext
@@ -9,12 +10,12 @@ import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
-@RequestMapping("/api/person")
 class PersonController(
     private val personService: PersonService,
     private val toastViewComponent: ToastViewComponent
 ) {
-    @PutMapping
+
+    @PutMapping(ApiConfig.Person.post)
     fun createPerson(
         personFormDTO: PersonFormViewComponent.PersonFormDTO,
         response: HttpServletResponse

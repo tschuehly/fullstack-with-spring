@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<form hx-put="/api/person" class="p-10 bg-white rounded shadow-xl">
+<form th:attr="hx-put=${personPost}" class="p-10 bg-white rounded shadow-xl">
     <div class="">
         <label class="block text-sm text-gray-600" for="firstName">First Name</label>
         <input aria-label="Name" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
