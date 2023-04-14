@@ -43,8 +43,8 @@
                         <button  th:each="label, index : ${renderTimeLabelList}"
                                  class="bg-blue-600 rounded-lg p-2"
                                  th:text="${label}"
-                                 th:attr="hx-get=@{/lineChartComponent(name=${label})}"
-                                 th:attrappend="hx-trigger=${index.first}? 'load,click'"
+                                 th:hx-get="@{/lineChartComponent(name=${label})}"
+                                 th:hx-trigger="${index.first}? 'load,click'"
                                  hx-target="#lineChart"></button>
                     </div>
                     <div class="p-6 bg-white" id="lineChart">

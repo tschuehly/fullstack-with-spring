@@ -26,7 +26,7 @@ class DashboardViewComponent(
         ),
         "renderTimeLabelList" toProperty analyticsService.getLabelList(),
         "personTable" toProperty TableViewComponent.Table(
-            listOf("First Name", "Last Name", "Phone Number", "Email", "Birth Date"),
+            listOf("ID","First Name", "Last Name", "Phone Number", "Email", "Birth Date"),
             personService.getPersonData().map { person ->
                 person.getPersonAsList()
             }

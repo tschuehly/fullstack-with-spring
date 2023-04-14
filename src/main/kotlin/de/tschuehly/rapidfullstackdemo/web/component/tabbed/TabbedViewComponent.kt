@@ -11,8 +11,14 @@ class TabbedViewComponent {
     fun render() = ViewContext(
         "sidebarActiveTab" toProperty SidebarViewComponent.ActiveTab.TabbedContent,
         "alpineTabs" toProperty listOf(
-            AlpineTabViewComponent.Tab("Tab1", "Lorem Ipsum"),
-            AlpineTabViewComponent.Tab("Tab2", "Lorem Ipsum"),
+            AlpineTabViewComponent.Tab(
+                "AlpineTab1",
+                "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+            ),
+            AlpineTabViewComponent.Tab(
+                "AlpineTab2",
+                "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+            ),
         )
     )
 }

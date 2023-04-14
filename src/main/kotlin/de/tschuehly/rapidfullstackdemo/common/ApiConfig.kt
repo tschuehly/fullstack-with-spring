@@ -5,7 +5,7 @@ class ApiConfig {
     class Person{
 
         companion object {
-            const val post = "/api/person"
+            const val put = "/api/person"
         }
     }
 }

@@ -7,7 +7,6 @@ import de.tschuehly.thymeleafviewcomponent.ViewContext
 import jakarta.servlet.http.HttpServletResponse
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
 class PersonController(
@@ -15,12 +14,12 @@ class PersonController(
     private val toastViewComponent: ToastViewComponent
 ) {
 
-    @PutMapping(ApiConfig.Person.post)
-    fun createPerson(
+    @PutMapping(ApiConfig.Person.put)
+    fun savePerson(
         personFormDTO: PersonFormViewComponent.PersonFormDTO,
         response: HttpServletResponse
     ): ViewContext {
-        personService.addPerson(personFormDTO.convertToPerson())
+        personService.savePerson(personFormDTO.convertToPerson())
         response.addHeader("HX-Retarget", "#toast")
         return toastViewComponent.render(
             "Successfully saved Person",

@@ -1,35 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<form th:attr="hx-put=${personPost}" class="p-10 bg-white rounded shadow-xl">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="person" type="de.tschuehly.rapidfullstackdemo.web.component.form.person.PersonFormViewComponent.PersonFormDTO"*/-->
+<form th:attr="hx-put=${personPost}"
+      class="p-10 bg-white rounded shadow-xl" th:object="${person}">
+    <div class="hidden">
+        <label class="block text-sm text-gray-600">
+            ID
+            <input aria-label="ID" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+                   type="text" th:field="*{id}">
+        </label>
+    </div>
     <div class="">
-        <label class="block text-sm text-gray-600" for="firstName">First Name</label>
-        <input aria-label="Name" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-               id="firstName" name="firstName"
-               placeholder="Your First Name" required="" type="text">
+        <label class="block text-sm text-gray-600">
+            First Name
+            <input aria-label="Name" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+                   placeholder="Your First Name" type="text"
+                   th:field="*{firstName}">
+        </label>
     </div>
     <div class="mt-2">
-        <label class="block text-sm text-gray-600" for="lastName">Last Name</label>
-        <input aria-label="Last Name" class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
-               id="lastName" name="lastName"
-               placeholder="Your Last Name" required="" type="text">
+        <label class="block text-sm text-gray-600">
+            Last Name
+            <input aria-label="Last Name" class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
+                   th:field="*{lastName}"
+                   placeholder="Your Last Name" type="text">
+        </label>
     </div>
     <div class="mt-2">
-        <label class="block text-sm text-gray-600" for="phoneNumber">Phone Number</label>
-        <input aria-label="Telephone Number" class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
-               id="phoneNumber"
-               name="phoneNumber" placeholder="Your Telephone Number" required="" type="tel">
+        <label class="block text-sm text-gray-600">
+            Phone Number
+            <input aria-label="Telephone Number" class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
+                   th:field="*{phoneNumber}"
+                   placeholder="Your Telephone Number" type="tel">
+        </label>
     </div>
     <div class="mt-2">
-        <label class="block text-sm text-gray-600" for="birthDate">Birth Date</label>
-        <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="birthDate" name="birthDate" type="date"
-               required="" placeholder="Your Birth Date" aria-label="Birth Date">
+        <label class="block text-sm text-gray-600">
+            Birth Date
+            <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
+                   th:field="*{birthDate}"
+                   type="date" placeholder="Your Birth Date" aria-label="Birth Date">
+        </label>
     </div>
 
     <div class="mt-2">
-        <label class="block text-sm text-gray-600" for="email">Email</label>
-        <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text"
-               required="" placeholder="Your Email" aria-label="Email">
+        <label class="block text-sm text-gray-600">
+            Email
+            <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
+                   th:field="*{email}"
+                   type="text" placeholder="Your Email" aria-label="Email">
+        </label>
     </div>
     <div class="mt-6">
         <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Submit</button>
