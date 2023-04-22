@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="z-40 h-full w-full fixed top-0 left-0 bg-white p-24 bg-opacity-50"
+>
+
+    <div class="w-4/6 mx-auto drop-shadow-lg border-2 rounded">
+        <button onclick="this.parentElement.parentElement.style.display = 'none'" class="strong text-xl">
+            X
+        </button>
+        <div th:view:component="${embeddedComponent}"></div>
+
+    </div>
+</div>
+</html>

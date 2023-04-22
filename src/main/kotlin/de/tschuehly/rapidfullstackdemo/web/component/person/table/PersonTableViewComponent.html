@@ -1,0 +1,8 @@
+<div id="personTable">
+    <div class="flex justify-end mb-2">
+
+        <button hx-get="/component/person/table" hx-target="#personTable" class="p-2  border-2">Reload Table</button>
+    </div>
+    <div view:component="advancedTableViewComponent.render(personTable)"></div>
+
+</div>

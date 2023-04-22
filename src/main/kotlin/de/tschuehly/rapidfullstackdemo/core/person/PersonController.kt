@@ -1,8 +1,8 @@
 package de.tschuehly.rapidfullstackdemo.core.person
 
 import de.tschuehly.rapidfullstackdemo.common.ApiConfig
-import de.tschuehly.rapidfullstackdemo.web.component.form.person.PersonFormViewComponent
-import de.tschuehly.rapidfullstackdemo.web.component.toast.ToastViewComponent
+import de.tschuehly.rapidfullstackdemo.web.component.person.form.PersonFormViewComponent
+import de.tschuehly.rapidfullstackdemo.web.component.util.toast.ToastViewComponent
 import de.tschuehly.thymeleafviewcomponent.ViewContext
 import jakarta.servlet.http.HttpServletResponse
 import org.springframework.stereotype.Controller
