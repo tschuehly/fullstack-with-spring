@@ -1,5 +1,6 @@
 package de.tschuehly.rapidfullstackdemo.web.page
 
+import de.tschuehly.rapidfullstackdemo.web.component.person.table.PersonTableViewComponent
 import de.tschuehly.rapidfullstackdemo.web.page.calendar.CalendarViewComponent
 import de.tschuehly.rapidfullstackdemo.web.page.dashboard.DashboardViewComponent
 import de.tschuehly.rapidfullstackdemo.web.page.form.FormViewComponent
@@ -16,6 +17,7 @@ class PageController(
     private val tabbedViewComponent: TabbedViewComponent,
     private val tableExampleViewComponent: TableExampleViewComponent,
     private val formViewComponent: FormViewComponent,
+    private val personTableViewComponent: PersonTableViewComponent
 ) {
     @GetMapping(SidebarViewComponent.dashboardHref)
     fun home() = dashboardViewComponent.render()

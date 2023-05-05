@@ -13,7 +13,8 @@ class TabbedViewComponent {
         "alpineTabs" toProperty listOf(
             AlpineTabViewComponent.Tab(
                 "AlpineTab1",
-                "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor " +
+                        "invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
             ),
             AlpineTabViewComponent.Tab(
                 "AlpineTab2",
