@@ -5,7 +5,7 @@ supabase:
   anonKey: ${SUPABASE_ANON_KEY}
   databasePassword: ${SUPABASE_DATABASE_PW}
   jwtSecret: ${SUPABASE_JWT_SECRET}
-  successfulLoginRedirectPage: /account
+  successfulLoginRedirectPage: /tables
   passwordRecoveryPage: /updatePassword
   unauthenticatedPage: /unauthenticated
   unauthorizedPage: /unauthorizedPage
@@ -14,5 +14,27 @@ supabase:
   public:
     get:
       - "/"
+      - "/api/user/logout"
+      - "/js/**"
       - "/error"
-      - /unauthenticated
+      - "/unauthenticated"
+      - "/lineChartComponent"
+      - "/tables"
+      - "/forms"
+      - "/tabbed"
+      - "/calendar"
+      - "/login"
+      - "/register"
+      - "/403"
+      - "/favicon.ico"
+      - "/error"
+      - "/resetPassword"
+      - "/unauthenticated"
+      - "/unauthorized"
+    put:
+      - "/api/person"
+    post:
+      - "/api/user/register"
+      - "/api/user/login"
+      - "/api/user/jwt"
+      - "/api/user/sendPasswordResetEmail"

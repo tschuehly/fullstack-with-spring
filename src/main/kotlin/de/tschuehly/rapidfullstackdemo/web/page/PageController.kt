@@ -5,6 +5,8 @@ import de.tschuehly.rapidfullstackdemo.web.page.calendar.CalendarViewComponent
 import de.tschuehly.rapidfullstackdemo.web.page.dashboard.DashboardViewComponent
 import de.tschuehly.rapidfullstackdemo.web.page.form.FormViewComponent
 import de.tschuehly.rapidfullstackdemo.web.page.layout.sidebar.SidebarViewComponent
+import de.tschuehly.rapidfullstackdemo.web.page.login.LoginViewComponent
+import de.tschuehly.rapidfullstackdemo.web.page.register.RegisterViewComponent
 import de.tschuehly.rapidfullstackdemo.web.page.tabbed.TabbedViewComponent
 import de.tschuehly.rapidfullstackdemo.web.page.tableExample.TableExampleViewComponent
 import org.springframework.stereotype.Controller
@@ -17,7 +19,9 @@ class PageController(
     private val tabbedViewComponent: TabbedViewComponent,
     private val tableExampleViewComponent: TableExampleViewComponent,
     private val formViewComponent: FormViewComponent,
-    private val personTableViewComponent: PersonTableViewComponent
+    private val personTableViewComponent: PersonTableViewComponent,
+    private val registerViewComponent: RegisterViewComponent,
+    private val loginViewComponent: LoginViewComponent
 ) {
     @GetMapping(SidebarViewComponent.dashboardHref)
     fun home() = dashboardViewComponent.render()
@@ -35,6 +39,11 @@ class PageController(
     @GetMapping(SidebarViewComponent.tablesHref)
     fun tableExample() = tableExampleViewComponent.render()
 
+    @GetMapping("/login")
+    fun login() = loginViewComponent.render()
+
+    @GetMapping("/register")
+    fun register() = registerViewComponent.render()
 
 }
 

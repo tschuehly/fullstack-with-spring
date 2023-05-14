@@ -1,3 +1,25 @@
+<!-- JavaScript version -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div id="toast-element" class="fixed bg-gray-800 w-1/2 bottom-8 left-1/4 py-4 px-8 text-center text-white">
+  <script th:inline="javascript" >
+    setTimeout(() =>
+            document.getElementById('toast-element').style.display = 'none',
+            [[${duration}]]
+    )
+  </script>
+
+  <div class="flex justify-between">
+    <span th:text="${message}"></span>
+    <button class="strong"
+            onclick="document.getElementById('toast-element').style.display = 'none'">
+      X
+    </button>
+  </div>
+</div>
+</html>
+
+<!-- AlpineJS version
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <div th:attr="x-init='setTimeout(() => $el.style.display = \'none\',' + ${duration} + ')'"
@@ -12,4 +34,4 @@
     </button>
   </div>
 </div>
-</html>
+</html>-->

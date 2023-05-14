@@ -5,13 +5,28 @@
     <div class="w-1/2"></div>
     <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
         <button @click="isOpen = !isOpen" class="realtive z-10 w-12 h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none">
-            <img src="https://source.unsplash.com/uJ8LNVCBjFQ/400x400">
+            <img th:if="${#authentication.principal != 'anonymousUser'}"
+                 src="https://source.unsplash.com/uJ8LNVCBjFQ/400x400">
+            <div class="flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
         </button>
         <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button>
         <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
-            <a href="#" class="block px-4 py-2 account-link hover:text-white">Account</a>
-            <a href="#" class="block px-4 py-2 account-link hover:text-white">Support</a>
-            <a href="#" class="block px-4 py-2 account-link hover:text-white">Sign Out</a>
+            <a th:if="${#authentication.principal == 'anonymousUser'}"
+               href="/login"
+               class="block px-4 py-2 account-link hover:text-white">
+                Login
+            </a>
+            <a th:if="${#authentication.principal == 'anonymousUser'}"
+               href="/register"
+               class="block px-4 py-2 account-link hover:text-white">
+                Register
+            </a>
+            <a th:if="${#authentication.principal != 'anonymousUser'}"
+               hx-get="/api/user/logout" class="block px-4 py-2 account-link hover:text-white">
+                Log Out
+            </a>
         </div>
     </div>
 </header>

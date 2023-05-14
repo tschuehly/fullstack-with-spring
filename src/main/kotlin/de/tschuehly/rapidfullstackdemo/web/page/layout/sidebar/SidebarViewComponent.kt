@@ -8,7 +8,7 @@ import de.tschuehly.thymeleafviewcomponent.toProperty
 @ViewComponent
 class SidebarViewComponent {
 
-    fun render(activeTab: ActiveTab) = ViewContext(
+    fun render(activeTab: ActiveTab?) = ViewContext(
         "activeTab" toProperty activeTab,
     )
 
