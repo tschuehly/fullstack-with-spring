@@ -14,13 +14,13 @@
 <div view:component="sidebarViewComponent.render(null)"></div>
 
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
-    <div view:component="headerViewComponent"></div>
+    <div view:component="headerViewComponent.render(null)"></div>
 
 
     <div class="w-full overflow-x-hidden border-t flex flex-col">
         <main class="w-full flex-grow p-6">
             <h1 class="text-3xl text-black pb-6">Login</h1>
-            <form>
+            <form class="flex gap-4 flex-wrap">
                 <label>Email:
                     <input type="text" name="email"/>
                 </label>

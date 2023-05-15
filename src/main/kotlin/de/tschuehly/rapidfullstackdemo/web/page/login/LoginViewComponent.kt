@@ -1,7 +1,7 @@
 package de.tschuehly.rapidfullstackdemo.web.page.login
 
-import de.tschuehly.thymeleafviewcomponent.ViewComponent
-import de.tschuehly.thymeleafviewcomponent.ViewContext
+import de.tschuehly.spring.viewcomponent.core.ViewComponent
+import de.tschuehly.spring.viewcomponent.core.ViewContext
 
 @ViewComponent
 class LoginViewComponent {

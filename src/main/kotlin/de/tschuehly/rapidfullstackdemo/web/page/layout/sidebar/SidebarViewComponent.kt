@@ -1,9 +1,9 @@
 package de.tschuehly.rapidfullstackdemo.web.page.layout.sidebar
 
 
-import de.tschuehly.thymeleafviewcomponent.ViewComponent
-import de.tschuehly.thymeleafviewcomponent.ViewContext
-import de.tschuehly.thymeleafviewcomponent.toProperty
+import de.tschuehly.spring.viewcomponent.core.ViewComponent
+import de.tschuehly.spring.viewcomponent.core.ViewContext
+import de.tschuehly.spring.viewcomponent.core.toProperty
 
 @ViewComponent
 class SidebarViewComponent {

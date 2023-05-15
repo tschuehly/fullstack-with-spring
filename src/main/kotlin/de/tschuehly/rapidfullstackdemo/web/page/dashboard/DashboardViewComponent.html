@@ -5,8 +5,15 @@
     <title>Tailwind Admin Template</title>
     <th:block th:replace="~{commonhead}"></th:block>
 </head>
+
 <body class="bg-gray-100 font-family-karla flex">
 
+<script>
+    if (window.location.hash.startsWith("#access_token")) {
+        htmx.ajax('POST', '/api/user/jwt', {target: '#body', swap: 'outerHTML'})
+            .then(window.location.hash = "")
+    }
+</script>
 
 <!--/*@thymesVar id="sidebarActiveTab" type="de.tschuehly.rapidfullstackdemo.web.page.layout.sidebar.SidebarViewComponent.ActiveTab"*/-->
 
@@ -14,7 +21,7 @@
 <div view:component="sidebarViewComponent.render(sidebarActiveTab)"></div>
 
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
-    <div view:component="headerViewComponent"></div>
+    <div view:component="headerViewComponent.render(sidebarActiveTab)"></div>
 
 
     <div class="w-full overflow-x-hidden border-t flex flex-col">

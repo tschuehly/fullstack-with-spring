@@ -2,7 +2,7 @@ package de.tschuehly.rapidfullstackdemo.web.advice
 
 import de.tschuehly.rapidfullstackdemo.web.component.util.toast.ToastViewComponent
 import de.tschuehly.supabasesecurityspringbootstarter.exception.*
-import de.tschuehly.thymeleafviewcomponent.ViewContext
+import de.tschuehly.spring.viewcomponent.core.ViewContext
 import org.slf4j.Logger
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler

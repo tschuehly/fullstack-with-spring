@@ -29,9 +29,7 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-//    implementation("com.github.tschuehly:thymeleaf-view-component:0.5.0")
-        implementation("de.tschuehly:thymeleaf-view-component")
-    //implementation("com.github.tschuehly:supabase-security-spring-boot-starter:d45a18dbeb")
+    implementation("de.tschuehly:spring-view-component-thymeleaf:0.5.2")
     implementation("de.tschuehly:supabase-security-spring-boot-starter:0.2.0")
 }
 
