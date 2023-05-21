@@ -38,3 +38,6 @@ supabase:
       - "/api/user/login"
       - "/api/user/jwt"
       - "/api/user/sendPasswordResetEmail"
+logging:
+  level:
+    org.springframework.web: DEBUG
