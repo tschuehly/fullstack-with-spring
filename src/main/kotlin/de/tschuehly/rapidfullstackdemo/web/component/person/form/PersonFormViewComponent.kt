@@ -4,7 +4,7 @@ import de.tschuehly.rapidfullstackdemo.common.ApiConfig
 import de.tschuehly.rapidfullstackdemo.core.person.Person
 import de.tschuehly.rapidfullstackdemo.core.person.PersonService
 import de.tschuehly.spring.viewcomponent.core.ViewComponent
-import de.tschuehly.spring.viewcomponent.core.ViewContext
+import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 import de.tschuehly.spring.viewcomponent.core.toProperty
 import java.time.LocalDate
 

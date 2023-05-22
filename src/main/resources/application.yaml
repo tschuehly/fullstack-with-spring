@@ -1,5 +1,5 @@
 viewcomponent:
-  localDevelopment: true
+  localDevelopment: false
 supabase:
   projectId: tdvmeydbgpulquximxzc
   anonKey: ${SUPABASE_ANON_KEY}

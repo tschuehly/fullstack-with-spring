@@ -1,7 +1,7 @@
 package de.tschuehly.rapidfullstackdemo.web.component.util.table
 
 import de.tschuehly.spring.viewcomponent.core.ViewComponent
-import de.tschuehly.spring.viewcomponent.core.ViewContext
+import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 import de.tschuehly.spring.viewcomponent.core.toProperty
 
 @ViewComponent
