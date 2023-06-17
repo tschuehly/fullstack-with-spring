@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/htmx.org@1.8.6"></script>
+  </head>
+<body>
+You are not allowed to access this resource
+
+<form>
+  <label>User Id
+    <input name="userId" type="text">
+  </label>
+  <label>Admin Role
+    <input name="roles" type="checkbox" value="admin"/>
+  </label>
+  <label>User Role
+    <input name="roles" type="checkbox" value="user"/>
+  </label>
+  <button hx-put="/api/user/setRoles">Submit</button>
+</form>
+</body>
+</html>
