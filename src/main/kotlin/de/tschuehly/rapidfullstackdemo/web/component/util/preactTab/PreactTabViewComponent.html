@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script type="module" th:inline="javascript">
+    import {Component, html, render} from 'https://esm.sh/htm/preact/standalone'
+    class TabComponent extends Component {
+        tabs = /*[[${tabs}]]*/ []
+        render() {
+            return html`
+                <ul>
+                    ${this.tabs.map(tab => html`
+                        <li>${tab}</li>
+                    `)}
+                </ul>`
+        }
+    }
+    render(html`<${TabComponent}/>`, document.getElementById('preactTabComponent'));
+</script>
+<div id="preactTabComponent"></div>
+</html>

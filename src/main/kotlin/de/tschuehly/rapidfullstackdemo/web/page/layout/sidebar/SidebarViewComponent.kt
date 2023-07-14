@@ -1,6 +1,7 @@
 package de.tschuehly.rapidfullstackdemo.web.page.layout.sidebar
 
 
+import de.tschuehly.rapidfullstackdemo.web.page.layout.sidebar.SidebarViewComponent.ActiveTab
 import de.tschuehly.spring.viewcomponent.core.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 import de.tschuehly.spring.viewcomponent.core.toProperty
@@ -8,8 +9,9 @@ import de.tschuehly.spring.viewcomponent.core.toProperty
 @ViewComponent
 class SidebarViewComponent {
 
-    fun render(activeTab: ActiveTab?) = ViewContext(
+    fun render(activeTab: ActiveTab) = ViewContext(
         "activeTab" toProperty activeTab,
+        "activeTabsArray" toProperty ActiveTab.values()
     )
 
     enum class ActiveTab(val displayName: String, val icon: String, val href: String) {
