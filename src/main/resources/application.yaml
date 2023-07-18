@@ -6,10 +6,14 @@ supabase:
   databasePassword: ${SUPABASE_DATABASE_PW}
   jwtSecret: ${SUPABASE_JWT_SECRET}
   successfulLoginRedirectPage: /tables
-  passwordRecoveryPage: /updatePassword
-  unauthenticatedPage: /unauthenticated
-  unauthorizedPage: /unauthorizedPage
+  passwordRecoveryPage: /updatePassword.html
+  unauthenticatedPage: /unauthenticated.html
+  unauthorizedPage: /unauthorized.html
   sslOnly: false
+  roles:
+    admin:
+        get:
+          - "/forms"
 
   public:
     get:
@@ -17,10 +21,8 @@ supabase:
       - "/api/user/logout"
       - "/js/**"
       - "/error"
-      - "/unauthenticated"
       - "/lineChartComponent"
       - "/tables"
-      - "/forms"
       - "/tabbed"
       - "/calendar"
       - "/login"
@@ -28,8 +30,8 @@ supabase:
       - "/403"
       - "/favicon.ico"
       - "/error"
-      - "/resetPassword"
-      - "/unauthenticated"
+      - "/updatePassword.html"
+      - "/unauthenticated.html"
       - "/unauthorized"
     put:
       - "/api/person"

@@ -23,3 +23,9 @@
     .nav-item:hover { background: #1947ee; }
     .account-link:hover { background: #3d68ff; }
 </style>
+<script>
+    if (window.location.hash.startsWith("#access_token")) {
+        htmx.ajax('POST', '/api/user/jwt', {target: '#body', swap: 'outerHTML'})
+            .then(window.location.hash = "")
+    }
+</script>
