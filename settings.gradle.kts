@@ -1,7 +1,7 @@
-rootProject.name = "rapid-fullstack-demo"
-
+rootProject.name = "fullstack-demo"
+/*
 includeBuild("E:\\Programmieren\\supabase-security-spring-boot-starter"){
     dependencySubstitution {
         substitute(module("de.tschuehly:supabase-security-spring-boot-starter")).using(project(":"))
     }
-}
+}*/

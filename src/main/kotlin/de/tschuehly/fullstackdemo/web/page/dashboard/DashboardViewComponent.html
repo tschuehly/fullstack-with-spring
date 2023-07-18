@@ -1,0 +1,74 @@
+<!DOCTYPE html >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:view="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tailwind Admin Template</title>
+    <th:block th:replace="~{commonhead}"></th:block>
+</head>
+
+<body class="bg-gray-100 font-family-karla flex">
+
+<script>
+    if (window.location.hash.startsWith("#access_token")) {
+        htmx.ajax('POST', '/api/user/jwt', {target: '#body', swap: 'outerHTML'})
+            .then(window.location.hash = "")
+    }
+</script>
+
+<!--/*@thymesVar id="sidebarActiveTab" type="de.tschuehly.fullstackdemo.web.page.layout.sidebar.SidebarViewComponent.ActiveTab"*/-->
+
+
+<div view:component="sidebarViewComponent.render(sidebarActiveTab)"></div>
+
+<div class="w-full flex flex-col h-screen overflow-y-hidden">
+    <div view:component="headerViewComponent.render(sidebarActiveTab)"></div>
+
+
+    <div class="w-full overflow-x-hidden border-t flex flex-col">
+        <main class="w-full flex-grow p-6">
+            <h1 class="text-3xl text-black pb-6">Dashboard</h1>
+            <div class="flex flex-wrap mt-6">
+                <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
+                    <p class="text-xl pb-3 flex items-center">
+                        <i class="fas fa-plus mr-3"></i> Component Requests
+                    </p>
+                    <div class="p-6 bg-white">
+                        <div view:component="chartViewComponent.render(requestChart)"></div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0">
+
+                    <p class="text-xl pb-3 flex items-center">
+                        <i class="fas fa-check mr-3"></i> Component Rendertime
+                    </p>
+                    <div class="flex flex-row flex-wrap gap-4">
+                        <button  th:each="label, index : ${renderTimeLabelList}"
+                                 class="bg-blue-600 rounded-lg p-2"
+                                 th:text="${label}"
+                                 th:hx-get="@{/lineChartComponent(name=${label})}"
+                                 th:hx-trigger="${index.first}? 'load,click'"
+                                 hx-target="#lineChart"></button>
+                    </div>
+                    <div class="p-6 bg-white" id="lineChart">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="w-full mt-12">
+                <p class="text-xl pb-3 flex items-center">
+                    <i class="fas fa-list mr-3"></i> Latest Person submissons.
+                </p>
+                <div view:component="tableViewComponent.render(personTable)"></div>
+            </div>
+        </main>
+
+        <footer class="w-full bg-white text-right p-4">
+            Template by <a target="_blank" href="https://davidgrzyb.com" class="underline">David Grzyb</a>.
+        </footer>
+    </div>
+
+</div>
+
+</body>
+</html>

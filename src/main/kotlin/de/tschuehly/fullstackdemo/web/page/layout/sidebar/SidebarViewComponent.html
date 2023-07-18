@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+    <div class="p-6">
+        <a href="/" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+        <button class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+            <i class="fas fa-plus mr-3"></i> New Report
+        </button>
+    </div>
+    <!--/*@thymesVar id="tab" type="de.tschuehly.fullstackdemo.web.page.layout.sidebar.SidebarViewComponent.ActiveTab"*/-->
+
+
+    <nav class="text-white text-base font-semibold pt-3">
+        <th:block th:each="tab : ${activeTabsArray}">
+            <a th:href="${tab.href}" class="flex items-center  text-white py-4 pl-6 nav-item"
+               th:classappend="${tab.equals(activeTab)  ? 'active-nav-link' : ' opacity-75 hover:opacity-100 '}">
+                <i class="fas mr-3" th:classappend="${tab.icon}"></i>
+                <span th:text="${tab.displayName}"></span>
+            </a>
+        </th:block>
+    </nav>
+
+</aside>
+</html>
