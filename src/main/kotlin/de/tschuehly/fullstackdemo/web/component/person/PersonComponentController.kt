@@ -16,8 +16,10 @@ class PersonComponentController(
     private val personTableViewComponent: PersonTableViewComponent
 ) {
     @GetMapping("/modal/{personId}")
-    fun personModal(@PathVariable personId: String) =
-        modalViewComponent.render(::personFormViewComponent.name + ".render($personId)")
+    fun personModal(@PathVariable personId: Int) =
+        modalViewComponent.render(
+            personFormViewComponent.render(personId)
+        )
 
     @GetMapping("/table")
     fun personTable() = personTableViewComponent.render()

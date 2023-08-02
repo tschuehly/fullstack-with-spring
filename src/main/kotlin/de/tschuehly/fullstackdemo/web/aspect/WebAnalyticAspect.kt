@@ -31,7 +31,7 @@ class WebAnalyticAspect(
 
     @Around(
         "execution(* render(..)) && " +
-                "@within(de.tschuehly.spring.viewcomponent.core.ViewComponent)"
+                "@within(de.tschuehly.spring.viewcomponent.core.component.ViewComponent)"
     )
     fun aroundComponent(joinPoint: ProceedingJoinPoint): Any? {
         var returnValue: Any? = null

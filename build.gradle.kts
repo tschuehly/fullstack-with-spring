@@ -45,10 +45,6 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.withType<Jar>{
-    from(sourceSets.main.get().output.resourcesDir)
-}
-
 sourceSets {
     main {
         resources {
@@ -56,4 +52,5 @@ sourceSets {
             exclude("**/*.kt")
         }
     }
+
 }

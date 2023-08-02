@@ -1,5 +1,9 @@
-viewcomponent:
-  localDevelopment: false
+spring:
+  view-component:
+    localDevelopment: true
+    view-action:
+      enabled: true
+
 supabase:
   projectId: tdvmeydbgpulquximxzc
   anonKey: ${SUPABASE_ANON_KEY}
@@ -13,7 +17,7 @@ supabase:
   roles:
     admin:
         get:
-          - "/forms"
+
 
   public:
     get:
@@ -24,6 +28,7 @@ supabase:
       - "/lineChartComponent"
       - "/tables"
       - "/tabbed"
+      - "/forms"
       - "/calendar"
       - "/login"
       - "/register"

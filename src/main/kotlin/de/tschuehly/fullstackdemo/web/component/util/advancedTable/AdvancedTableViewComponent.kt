@@ -1,6 +1,6 @@
 package de.tschuehly.fullstackdemo.web.component.util.advancedTable
 
-import de.tschuehly.spring.viewcomponent.core.ViewComponent
+import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 import de.tschuehly.spring.viewcomponent.core.toProperty
 

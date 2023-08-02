@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class RapidFullstackDemoApplication
+class SpringFullstackDemoApplication
 
 fun main(args: Array<String>) {
-    runApplication<RapidFullstackDemoApplication>(*args)
+    runApplication<SpringFullstackDemoApplication>(*args)
 }

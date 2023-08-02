@@ -1,37 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:view="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Tailwind Admin Template</title>
-    <th:block th:replace="~{commonhead}"></th:block>
-
-</head>
-<body class="bg-gray-100 font-family-karla flex">
-<div view:component="sidebarViewComponent.render(sidebarActiveTab)"></div>
-<div class="relative w-full flex flex-col h-screen overflow-y-hidden">
-    <div view:component="headerViewComponent.render(sidebarActiveTab)"></div>
-
-    <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
-        <main class="w-full flex-grow p-6">
-            <h1 class="w-full text-3xl text-black pb-6">Forms</h1>
-
-            <div class="flex flex-wrap">
-                <div class="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">
-                    <p class="text-xl pb-6 flex items-center">
-                        <i class="fas fa-list mr-3"></i> Person Form
-                    </p>
-                    <div class="leading-loose">
-                        <div view:component="personFormViewComponent.render(null)"></div>
-                    </div>
-                </div>
+<main class="w-full flex-grow p-6">
+    <h1 class="w-full text-3xl text-black pb-6">Forms</h1>
+    <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">
+            <p class="text-xl pb-6 flex items-center">
+                <i class="fas fa-list mr-3"></i> Person Form
+            </p>
+            <div class="leading-loose">
+                <div view:component="${personFormViewComponent}"></div>
             </div>
-        </main>
-
-        <footer class="w-full bg-white text-right p-4">
-            Template by <a target="_blank" href="https://davidgrzyb.com" class="underline">David Grzyb</a>.
-        </footer>
+        </div>
     </div>
-
-</div>
-
-</body>
-</html>
+</main>

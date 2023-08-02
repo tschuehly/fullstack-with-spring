@@ -10,10 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest
 class DashboardViewComponentTest {
 
     fun dashboardRenders(){
-        val analyticsService = AnalyticsService()
-        val personService = PersonService()
-        val dashboard = DashboardViewComponent(analyticsService, personService)
-        dashboard.render()
 
     }
 }

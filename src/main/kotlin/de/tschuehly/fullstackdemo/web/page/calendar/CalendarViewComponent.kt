@@ -1,13 +1,15 @@
 package de.tschuehly.fullstackdemo.web.page.calendar
 
-import de.tschuehly.fullstackdemo.web.page.layout.sidebar.SidebarViewComponent
-import de.tschuehly.spring.viewcomponent.core.ViewComponent
-import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
+import de.tschuehly.fullstackdemo.web.page.calendar.eventModal.EventModalViewComponent
+import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.core.toProperty
+import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 
 @ViewComponent
-class CalendarViewComponent {
+class CalendarViewComponent(
+    private val eventModalViewComponent: EventModalViewComponent
+){
     fun render() = ViewContext(
-        "sidebarActiveTab" toProperty SidebarViewComponent.ActiveTab.Calendar
+        "eventModalViewComponent" toProperty eventModalViewComponent.render()
     )
 }

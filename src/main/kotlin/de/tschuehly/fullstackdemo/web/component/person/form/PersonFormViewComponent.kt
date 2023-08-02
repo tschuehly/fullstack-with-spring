@@ -3,7 +3,7 @@ package de.tschuehly.fullstackdemo.web.component.person.form
 import de.tschuehly.fullstackdemo.common.ApiConfig
 import de.tschuehly.fullstackdemo.core.person.Person
 import de.tschuehly.fullstackdemo.core.person.PersonService
-import de.tschuehly.spring.viewcomponent.core.ViewComponent
+import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 import de.tschuehly.spring.viewcomponent.core.toProperty
 import java.time.LocalDate
@@ -12,7 +12,7 @@ import java.time.LocalDate
 class PersonFormViewComponent(
     private val personService: PersonService
 ) {
-    fun render(personId: Int?) = ViewContext(
+    fun render(personId: Int? = null) = ViewContext(
         "personPost" toProperty ApiConfig.Person.put,
         "person" toProperty getPerson(personId)
     )

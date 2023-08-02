@@ -1,45 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:view="http://www.w3.org/1999/xhtml">
-<head>
-  <th:block th:insert="~{commonhead}"></th:block>
-  <title>Table Example</title>
-</head>
-<body class="bg-gray-100 font-family-karla flex">
+<main class="w-full flex-grow p-6">
+  <h1 class="text-3xl text-black pb-6">Tables</h1>
 
-
-<div view:component="sidebarViewComponent.render(sidebarActiveTab)"></div>
-
-
-
-<div class="w-full flex flex-col h-screen overflow-y-hidden">
-  <div view:component="headerViewComponent.render(sidebarActiveTab)"></div>
-
-  <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
-    <main class="w-full flex-grow p-6">
-      <h1 class="text-3xl text-black pb-6">Tables</h1>
-
-      <div class="w-full mt-6">
-        <p class="text-xl pb-3 flex items-center">
-          <i class="fas fa-list mr-3"></i> Advanced Person Table Example
-
-          <div view:component="personTableViewComponent.render(false)"></div>
-        </p>
-      </div>
-
-
-
-    </main>
-
-    <footer class="w-full bg-white text-right p-4">
-      Template by <a target="_blank" href="https://davidgrzyb.com" class="underline">David Grzyb</a>.
-    </footer>
+  <div class="w-full mt-6">
+    <p class="text-xl pb-3 flex items-center">
+      <i class="fas fa-list mr-3"></i> Advanced Person Table Example
+    </p>
+    <div view:component="${personTableViewComponent}"></div>
   </div>
+</main>
 
-</div>
 
-<!-- AlpineJS -->
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-<!-- Font Awesome -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-</body>
-</html>

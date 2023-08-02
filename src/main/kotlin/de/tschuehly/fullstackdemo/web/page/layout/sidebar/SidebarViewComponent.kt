@@ -1,7 +1,7 @@
 package de.tschuehly.fullstackdemo.web.page.layout.sidebar
 
 
-import de.tschuehly.spring.viewcomponent.core.ViewComponent
+import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 import de.tschuehly.spring.viewcomponent.core.toProperty
 
