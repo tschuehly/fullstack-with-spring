@@ -13,7 +13,7 @@ class LayoutViewComponent(
 ) {
 
     fun render(
-        activeTab: SidebarViewComponent.ActiveTab,
+        activeTab: SidebarViewComponent.ActiveTab?,
         nestedViewComponent: ViewContext
     ) = ViewContext(
         "sidebarViewComponent" toProperty sidebarViewComponent.render(activeTab),

@@ -1,5 +1,5 @@
-//package de.tschuehly.fullstackdemo.web.advice
-//
+package de.tschuehly.fullstackdemo.web.advice
+
 //import de.tschuehly.fullstackdemo.web.component.util.toast.ToastViewComponent
 //import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 //import de.tschuehly.supabasesecurityspringbootstarter.exception.*

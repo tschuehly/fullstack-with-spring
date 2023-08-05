@@ -39,10 +39,11 @@ dependencies {
 
     implementation("de.tschuehly:spring-view-component-thymeleaf:0.6.1-SNAPSHOT")
 
+//    implementation("de.tschuehly:supabase-security-spring-boot-starter:0.2.5-SNAPSHOT")
+
 
     implementation("org.webjars.npm:htmx.org:1.9.2")
     implementation("org.webjars.npm:alpinejs:3.12.2")
-//    implementation("de.tschuehly:supabase-security-spring-boot-starter:0.2.5-SNAPSHOT")
 }
 
 tasks.withType<KotlinCompile> {

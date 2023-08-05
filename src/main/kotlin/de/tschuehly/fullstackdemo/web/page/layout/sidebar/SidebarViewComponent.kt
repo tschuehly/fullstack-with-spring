@@ -8,7 +8,7 @@ import de.tschuehly.spring.viewcomponent.core.toProperty
 @ViewComponent
 class SidebarViewComponent {
 
-    fun render(activeTab: ActiveTab) = ViewContext(
+    fun render(activeTab: ActiveTab?) = ViewContext(
         "activeTab" toProperty activeTab,
         "activeTabsArray" toProperty ActiveTab.values()
     )
@@ -18,7 +18,7 @@ class SidebarViewComponent {
         Tables("Tables", "fa-table", tablesHref),
         Forms("Forms", "fa-align-left", formsHref),
         TabbedContent("Tabbed Content", "fa-tablet-alt", tabbedHref),
-        Calendar("Calendar", "fa-calendar", calendarHref)
+        Calendar("Calendar", "fa-calendar", calendarHref),
 
     }
 
