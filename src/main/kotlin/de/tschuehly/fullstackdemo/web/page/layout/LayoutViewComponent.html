@@ -3,17 +3,16 @@
       xmlns:th="http://www.thymeleaf.org" xmlns:view="http://www.w3.org/1999/xhtml">
 <head>
     <title>Spring Fullstack</title>
-    <script src="https://unpkg.com/htmx.org@1.8.6"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://localhost:35729/livereload.js"></script>
-    <!-- AlpineJS -->
-    <script src="/js/alpineJS_2.8.2.min.js" defer></script>
     <!-- Font Awesome -->
-    <script src="/js/fontAwesome_5.13.0_all.min.js"></script>
+    <script defer src="/js/fontAwesome_5.13.0_all.min.js"></script>
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <script defer src="/webjars/htmx.org/1.9.2/dist/htmx.min.js"></script>
+    <script defer src="/webjars/alpinejs/3.12.2/dist/cdn.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
@@ -59,12 +58,6 @@
 
 <body class="bg-gray-100 font-family-karla flex">
 
-<script>
-    if (window.location.hash.startsWith("#access_token")) {
-        htmx.ajax('POST', '/api/user/jwt', {target: '#body', swap: 'outerHTML'})
-            .then(window.location.hash = "")
-    }
-</script>
 
 <div view:component="${sidebarViewComponent}"></div>
 

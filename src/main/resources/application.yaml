@@ -2,49 +2,7 @@ spring:
   view-component:
     localDevelopment: true
     view-action:
-      enabled: true
-
-supabase:
-  projectId: tdvmeydbgpulquximxzc
-  anonKey: ${SUPABASE_ANON_KEY}
-  databasePassword: ${SUPABASE_DATABASE_PW}
-  jwtSecret: ${SUPABASE_JWT_SECRET}
-  successfulLoginRedirectPage: /tables
-  passwordRecoveryPage: /updatePassword.html
-  unauthenticatedPage: /unauthenticated.html
-  unauthorizedPage: /unauthorized.html
-  sslOnly: false
-  roles:
-    admin:
-        get:
-
-
-  public:
-    get:
-      - "/"
-      - "/api/user/logout"
-      - "/js/**"
-      - "/error"
-      - "/lineChartComponent"
-      - "/tables"
-      - "/tabbed"
-      - "/forms"
-      - "/calendar"
-      - "/login"
-      - "/register"
-      - "/403"
-      - "/favicon.ico"
-      - "/error"
-      - "/updatePassword.html"
-      - "/unauthenticated.html"
-      - "/unauthorized"
-    put:
-      - "/api/person"
-    post:
-      - "/api/user/register"
-      - "/api/user/login"
-      - "/api/user/jwt"
-      - "/api/user/sendPasswordResetEmail"
+      enabled: false
 logging:
   level:
     org.springframework.web: DEBUG

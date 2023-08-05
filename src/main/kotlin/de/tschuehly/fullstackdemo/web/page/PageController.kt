@@ -6,8 +6,6 @@ import de.tschuehly.fullstackdemo.web.page.form.FormViewComponent
 import de.tschuehly.fullstackdemo.web.page.layout.LayoutViewComponent
 import de.tschuehly.fullstackdemo.web.page.layout.sidebar.SidebarViewComponent
 import de.tschuehly.fullstackdemo.web.page.layout.sidebar.SidebarViewComponent.ActiveTab
-import de.tschuehly.fullstackdemo.web.page.login.LoginViewComponent
-import de.tschuehly.fullstackdemo.web.page.register.RegisterViewComponent
 import de.tschuehly.fullstackdemo.web.page.tabbed.TabbedViewComponent
 import de.tschuehly.fullstackdemo.web.page.tableExample.TableExampleViewComponent
 import org.springframework.stereotype.Controller
@@ -20,8 +18,6 @@ class PageController(
     private val tabbedViewComponent: TabbedViewComponent,
     private val tableExampleViewComponent: TableExampleViewComponent,
     private val formViewComponent: FormViewComponent,
-    private val registerViewComponent: RegisterViewComponent,
-    private val loginViewComponent: LoginViewComponent,
     private val layoutViewComponent: LayoutViewComponent
 ) {
     @GetMapping(SidebarViewComponent.dashboardHref)
@@ -53,13 +49,6 @@ class PageController(
         ActiveTab.Calendar,
         calendarViewComponent.render()
     )
-
-
-    @GetMapping("/login")
-    fun login() = loginViewComponent.render()
-
-    @GetMapping("/register")
-    fun register() = registerViewComponent.render()
 
 }
 

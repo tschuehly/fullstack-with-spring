@@ -13,7 +13,7 @@ You can find the two libraries I created and used in the demo on GitHub:
 
 ### Joyful server-side full stack web development with Spring ViewComponent
 
-
+To enable the supabase-security starter you need to uncomment the dependency in the build.gradle.kts and uncomment the ExceptionController
 
 ## Spring I/O 2023
 

@@ -14,6 +14,13 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    maven {
+        url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+        mavenContent {
+            snapshotsOnly()
+        }
+    }
     maven("https://jitpack.io")
 }
 
@@ -30,8 +37,12 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-    implementation("de.tschuehly:spring-view-component-thymeleaf:0.6.0")
-    implementation("de.tschuehly:supabase-security-spring-boot-starter:0.2.2")
+    implementation("de.tschuehly:spring-view-component-thymeleaf:0.6.1-SNAPSHOT")
+
+
+    implementation("org.webjars.npm:htmx.org:1.9.2")
+    implementation("org.webjars.npm:alpinejs:3.12.2")
+//    implementation("de.tschuehly:supabase-security-spring-boot-starter:0.2.5-SNAPSHOT")
 }
 
 tasks.withType<KotlinCompile> {
@@ -52,5 +63,5 @@ sourceSets {
             exclude("**/*.kt")
         }
     }
-
 }
+

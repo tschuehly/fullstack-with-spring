@@ -34,7 +34,7 @@ class WebAnalyticAspect(
                 "@within(de.tschuehly.spring.viewcomponent.core.component.ViewComponent)"
     )
     fun aroundComponent(joinPoint: ProceedingJoinPoint): Any? {
-        var returnValue: Any? = null
+        var returnValue: Any?
         val elapsedTime = measureNanoTime {
             returnValue = joinPoint.proceed()
         }

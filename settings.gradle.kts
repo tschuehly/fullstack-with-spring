@@ -1,4 +1,5 @@
 rootProject.name = "fullstack-demo"
+
 /*
 includeBuild("E:\\Programmieren\\supabase-security-spring-boot-starter"){
     dependencySubstitution {

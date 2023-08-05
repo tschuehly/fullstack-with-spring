@@ -7,7 +7,8 @@ import de.tschuehly.spring.viewcomponent.core.toProperty
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 
 @ViewComponent
-class HeaderViewComponent {
+class HeaderViewComponent(
+) {
     fun render(activeTab: SidebarViewComponent.ActiveTab?) =
         ViewContext(
             "activeTab" toProperty activeTab,
