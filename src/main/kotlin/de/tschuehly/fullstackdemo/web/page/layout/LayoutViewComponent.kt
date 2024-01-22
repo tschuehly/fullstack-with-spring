@@ -15,9 +15,15 @@ class LayoutViewComponent(
     fun render(
         activeTab: SidebarViewComponent.ActiveTab?,
         nestedViewComponent: ViewContext
-    ) = ViewContext(
-        "sidebarViewComponent" toProperty sidebarViewComponent.render(activeTab),
-        "headerViewComponent" toProperty headerViewComponent.render(activeTab),
-        "nestedViewComponent" toProperty nestedViewComponent
+    ) = LayoutContext(
+        sidebarViewComponent.render(activeTab),
+        headerViewComponent.render(activeTab),
+        nestedViewComponent
     )
+
+    data class LayoutContext(
+        val sidebarViewComponent: ViewContext,
+        val headerViewComponent: ViewContext,
+        val nestedViewComponent: ViewContext
+    ): ViewContext
 }

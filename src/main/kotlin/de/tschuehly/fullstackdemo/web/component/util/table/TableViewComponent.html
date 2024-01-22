@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="tableCtx" type="de.tschuehly.fullstackdemo.web.component.util.table.TableViewComponent.TableCtx"*/-->
 <div class="bg-white overflow-auto">
     <table class="min-w-full bg-white">
         <thead class="bg-gray-800 text-white">
         <tr>
-            <th th:each="header : ${headerList}"
+
+            <th th:each="header : ${tableCtx.headerList}"
                 th:text="${header}"
                 class="text-left py-3 px-4 uppercase font-semibold text-sm"></th>
         </tr>
         </thead>
         <tbody class="text-gray-700">
-        <tr th:each="tableRow, index : ${tableData}"
+        <tr th:each="tableRow, index : ${tableCtx.tableData}"
             th:classappend="${index.even}? 'bg-gray-200'">
             <td th:each="tableCell : ${tableRow}"
                 th:text="${tableCell}"

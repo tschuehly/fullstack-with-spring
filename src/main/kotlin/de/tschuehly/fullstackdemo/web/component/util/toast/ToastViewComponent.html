@@ -1,16 +1,17 @@
 <!-- JavaScript version -->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="toastCtx" type="de.tschuehly.fullstackdemo.web.component.util.toast.ToastViewComponent.ToastCtx"*/-->
 <div id="toast-element" class="fixed bg-gray-800 w-1/2 bottom-8 left-1/4 py-4 px-8 text-center text-white">
   <script th:inline="javascript" >
     setTimeout(() =>
             document.getElementById('toast-element').style.display = 'none',
-            [[${duration}]]
+            [[${toastCtx.duration}]]
     )
   </script>
 
   <div class="flex justify-between">
-    <span th:text="${message}"></span>
+    <span th:text="${toastCtx.message}"></span>
     <button class="strong"
             onclick="document.getElementById('toast-element').style.display = 'none'">
       X
@@ -22,7 +23,7 @@
 <!-- AlpineJS version
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div th:attr="x-init='setTimeout(() => $el.style.display = \'none\',' + ${duration} + ')'"
+<div th:attr="x-init='setTimeout(() => $el.style.display = \'none\',' + ${toastCtx.duration} + ')'"
      class="fixed bg-gray-800 w-1/2 bottom-8 left-1/4 py-4 px-8 text-center text-white"
      x-data="{}"
      x-ref="info">

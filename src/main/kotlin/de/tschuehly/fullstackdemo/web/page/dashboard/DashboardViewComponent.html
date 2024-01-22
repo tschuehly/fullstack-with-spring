@@ -1,4 +1,5 @@
 <main class="w-full flex-grow p-6">
+    <!--/*@thymesVar id="dashboardCtx" type="de.tschuehly.fullstackdemo.web.page.dashboard.DashboardViewComponent.DashboardCtx"*/-->
     <h1 class="text-3xl text-black pb-6">Dashboard</h1>
     <div class="flex flex-wrap mt-6">
         <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
@@ -6,7 +7,7 @@
                 <i class="fas fa-plus mr-3"></i> Component Requests
             </p>
             <div class="p-6 bg-white">
-                <div view:component="${requestChartVC}"></div>
+                <div view:component="${dashboardCtx.requestChartVC}"></div>
             </div>
         </div>
         <div class="w-full lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0">
@@ -15,7 +16,7 @@
                 <i class="fas fa-check mr-3"></i> Component Rendertime
             </p>
             <div class="flex flex-row flex-wrap gap-4">
-                <button  th:each="label, index : ${renderTimeLabelList}"
+                <button  th:each="label, index : ${dashboardCtx.renderTimeLabelList}"
                          class="bg-blue-600 rounded-lg p-2"
                          th:text="${label}"
                          th:hx-get="@{/lineChartComponent(name=${label})}"
@@ -32,6 +33,6 @@
         <p class="text-xl pb-3 flex items-center">
             <i class="fas fa-list mr-3"></i> Latest Person submissons.
         </p>
-        <div view:component="${personTableVC}"></div>
+        <div view:component="${dashboardCtx.personTableVC}"></div>
     </div>
 </main>

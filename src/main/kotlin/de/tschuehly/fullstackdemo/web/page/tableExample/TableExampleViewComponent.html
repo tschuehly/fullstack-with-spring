@@ -5,7 +5,8 @@
     <p class="text-xl pb-3 flex items-center">
       <i class="fas fa-list mr-3"></i> Advanced Person Table Example
     </p>
-    <div view:component="${personTableViewComponent}"></div>
+    <!--/*@thymesVar id="tableExampleCtx" type="de.tschuehly.fullstackdemo.web.page.tableExample.TableExampleViewComponent.TableExampleCtx"*/-->
+    <div view:component="${tableExampleCtx.personTableViewComponent}"></div>
   </div>
 </main>
 

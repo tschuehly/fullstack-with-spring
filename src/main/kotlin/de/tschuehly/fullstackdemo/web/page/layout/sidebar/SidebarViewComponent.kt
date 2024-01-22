@@ -3,15 +3,20 @@ package de.tschuehly.fullstackdemo.web.page.layout.sidebar
 
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
-import de.tschuehly.spring.viewcomponent.core.toProperty
 
 @ViewComponent
 class SidebarViewComponent {
 
-    fun render(activeTab: ActiveTab?) = ViewContext(
-        "activeTab" toProperty activeTab,
-        "activeTabsArray" toProperty ActiveTab.values()
-    )
+    fun render(activeTab: ActiveTab?): ViewContext {
+        return SidebarCtx(
+            activeTab, ActiveTab.values().toList()
+        )
+    }
+
+    data class SidebarCtx(
+        val activeTab: ActiveTab?,
+        val activeTabsList: List<ActiveTab>
+    ): ViewContext
 
     enum class ActiveTab(val displayName: String, val icon: String, val href: String) {
         Dashboard("Dashboard", "fa-tachometer-alt", dashboardHref),

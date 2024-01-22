@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--/*@thymesVar id="person" type="de.tschuehly.fullstackdemo.web.component.person.form.PersonFormViewComponent.PersonFormDTO"*/-->
-<form th:hx-put="${personPost}"
-      class="p-10 bg-white rounded shadow-xl" th:object="${person}">
+<!--/*@thymesVar id="personFormCtx" type="de.tschuehly.fullstackdemo.web.component.person.form.PersonFormViewComponent.PersonFormCtx"*/-->
+<form th:hx-put="${personFormCtx.personPost}"
+      class="p-10 bg-white rounded shadow-xl">
     <div class="hidden">
         <label class="block text-sm text-gray-600">
             ID
             <input aria-label="ID" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                   type="text" th:field="*{id}">
+                   name="id"
+                   type="text"
+                   th:value="${personFormCtx.person.id}">
         </label>
     </div>
     <div class="">
@@ -15,14 +18,14 @@
             First Name
             <input aria-label="Name" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
                    placeholder="Your First Name" type="text"
-                   th:field="*{firstName}">
+                   name="firstName" th:value="${personFormCtx.person.firstName}">
         </label>
     </div>
     <div class="mt-2">
         <label class="block text-sm text-gray-600">
             Last Name
             <input aria-label="Last Name" class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
-                   th:field="*{lastName}"
+                   name="lastName" th:value="${personFormCtx.person.lastName}"
                    placeholder="Your Last Name" type="text">
         </label>
     </div>
@@ -30,7 +33,7 @@
         <label class="block text-sm text-gray-600">
             Phone Number
             <input aria-label="Telephone Number" class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
-                   th:field="*{phoneNumber}"
+                   name="phoneNumber" th:value="${personFormCtx.person.phoneNumber}"
                    placeholder="Your Telephone Number" type="tel">
         </label>
     </div>
@@ -38,7 +41,7 @@
         <label class="block text-sm text-gray-600">
             Birth Date
             <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
-                   th:field="*{birthDate}"
+                   name="birthDate" th:value="${personFormCtx.person.birthDate}"
                    type="date" placeholder="Your Birth Date" aria-label="Birth Date">
         </label>
     </div>
@@ -47,7 +50,7 @@
         <label class="block text-sm text-gray-600">
             Email
             <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
-                   th:field="*{email}"
+                   name="email" th:value="${personFormCtx.person.email}"
                    type="text" placeholder="Your Email" aria-label="Email">
         </label>
     </div>

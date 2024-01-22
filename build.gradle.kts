@@ -40,7 +40,7 @@ dependencies {
     implementation("de.tschuehly:spring-view-component-thymeleaf:0.7.2")
 
     implementation("org.webjars.npm:htmx.org:1.9.10")
-    implementation("org.webjars.npm:alpinejs:3.13.4")
+    implementation("org.webjars.npm:alpinejs:3.13.3")
 }
 
 tasks.withType<KotlinCompile> {

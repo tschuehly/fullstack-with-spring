@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="advancedTableCtx" type="de.tschuehly.fullstackdemo.web.component.util.advancedTable.AdvancedTableViewComponent.AdvancedTableCtx"*/-->
 <div class="bg-white overflow-auto">
-    <table class="min-w-full bg-white">
-        <thead class="bg-gray-800 text-white">
-        <tr>
-            <th th:each="header : ${headerList}"
-                th:text="${header}"
-                class="text-left py-3 px-4 uppercase font-semibold text-sm"></th>
-            <th class="text-left py-3 px-4 uppercase font-semibold text-sm"
-                th:if="${editComponentLink != ''}">Edit
-            </th>
-        </tr>
-        </thead>
-        <tbody class="text-gray-700">
-        <!--/*@thymesVar id="tableData" type="List<List<String>>"*/-->
-        <tr th:each="tableRow, index : ${tableData}"
-            th:classappend="${index.even}? 'bg-gray-200'">
-            <td th:each="tableCell : ${tableRow}"
-                th:text="${tableCell}"
-                class="text-left py-3 px-4"></td>
-            <td th:if="${editComponentLink != ''}" class="text-left py-3 px-4">
-                <button th:hx-get="${editComponentLink} + '/' +${tableRow.get(0)}" hx-target="#editArea">
-                    <i class="fas fa-pen mr-3"></i>
-                </button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <div id="editArea"></div>
+  <table class="min-w-full bg-white">
+    <thead class="bg-gray-800 text-white">
+    <tr>
+      <th th:each="header : ${advancedTableCtx.table.headerList}"
+          th:text="${header}"
+          class="text-left py-3 px-4 uppercase font-semibold text-sm"></th>
+      <th class="text-left py-3 px-4 uppercase font-semibold text-sm"
+          th:if="${advancedTableCtx.table.editComponentLink != ''}">Edit
+      </th>
+    </tr>
+    </thead>
+    <tbody class="text-gray-700">
+    <!--/*@thymesVar id="tableData" type="List<List<String>>"*/-->
+    <tr th:each="tableRow, index : ${advancedTableCtx.table.tableData}"
+        th:classappend="${index.even}? 'bg-gray-200'">
+      <td th:each="tableCell : ${tableRow}"
+          th:text="${tableCell}"
+          class="text-left py-3 px-4"></td>
+      <!--/*@thymesVar id="advancedTableCtx" type="de.tschuehly.fullstackdemo.web.component.util.advancedTable.AdvancedTableViewComponent.AdvancedTableCtx"*/-->
+      <td th:if="${advancedTableCtx.table.editComponentLink != ''}" class="text-left py-3 px-4">
+        <button th:hx-get="${advancedTableCtx.table.editComponentLink} + '/' +${tableRow.get(0)}" hx-target="#editArea">
+          <i class="fas fa-pen mr-3"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div id="editArea"></div>
 </div>
 </html>

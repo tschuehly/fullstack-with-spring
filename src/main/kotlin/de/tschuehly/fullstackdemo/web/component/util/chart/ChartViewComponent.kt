@@ -2,13 +2,14 @@ package de.tschuehly.fullstackdemo.web.component.util.chart
 
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
-import de.tschuehly.spring.viewcomponent.core.toProperty
 
 @ViewComponent
 class ChartViewComponent {
     fun render(
         barchartDetails: ChartDetails
-    ) = ViewContext("barchartDetails" toProperty barchartDetails)
+    ) = ChartCtx(barchartDetails)
+
+    data class ChartCtx(val barchartDetails: ChartDetails) : ViewContext
 
     class ChartDetails(
         val type: String,

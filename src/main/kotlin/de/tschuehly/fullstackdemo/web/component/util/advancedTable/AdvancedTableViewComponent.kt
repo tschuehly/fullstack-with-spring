@@ -2,19 +2,19 @@ package de.tschuehly.fullstackdemo.web.component.util.advancedTable
 
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
-import de.tschuehly.spring.viewcomponent.core.toProperty
 
 @ViewComponent
 class AdvancedTableViewComponent {
-    fun render(table: Table) = ViewContext(
-        "headerList" toProperty table.headerList,
-        "tableData" toProperty table.data,
-        "editComponentLink" toProperty table.editComponentLink,
+    fun render(table: Table) = AdvancedTableCtx(
+        table
     )
 
-    class Table(
+    data class Table(
         val headerList: List<String>,
-        val data: List<List<String>>,
+        val tableData: List<List<String>>,
         val editComponentLink: String = ""
     )
+    data class AdvancedTableCtx(
+        val table: Table
+    ):ViewContext
 }

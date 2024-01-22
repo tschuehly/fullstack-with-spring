@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--/*@thymesVar id="person" type="de.tschuehly.fullstackdemo.web.component.person.form.PersonFormViewComponent.PersonFormDTO"*/-->
+<!--/*@thymesVar id="personActionCtx" type="de.tschuehly.fullstackdemo.web.component.person.action.PersonActionViewComponent.PersonActionCtx"*/-->
 <form view:action="savePerson"
-      class="p-10 bg-white rounded shadow-xl" th:object="${person}">
+      class="p-10 bg-white rounded shadow-xl" th:object="${personActionCtx.person}">
   <div class="hidden">
     <label class="block text-sm text-gray-600">
       ID

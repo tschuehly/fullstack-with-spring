@@ -13,9 +13,10 @@
 
 
     <nav class="text-white text-base font-semibold pt-3">
-        <th:block th:each="tab : ${activeTabsArray}">
+        <!--/*@thymesVar id="sidebarCtx" type="de.tschuehly.fullstackdemo.web.page.layout.sidebar.SidebarViewComponent.SidebarCtx"*/-->
+        <th:block th:each="tab : ${sidebarCtx.activeTabsList}">
             <a th:href="${tab.href}" class="flex items-center  text-white py-4 pl-6 nav-item"
-               th:classappend="${tab.equals(activeTab)  ? 'active-nav-link' : ' opacity-75 hover:opacity-100 '}">
+               th:classappend="${tab.equals(sidebarCtx.activeTab)  ? 'active-nav-link' : ' opacity-75 hover:opacity-100 '}">
                 <i class="fas mr-3" th:classappend="${tab.icon}"></i>
                 <span th:text="${tab.displayName}"></span>
             </a>

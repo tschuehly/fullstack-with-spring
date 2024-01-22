@@ -5,8 +5,7 @@ import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 
 @ViewComponent
-class PreactTabViewComponent() {
-    fun render() = ViewContext(
-
-    )
+class PreactTabViewComponent {
+    fun render() = PreactTabCtx()
+    class PreactTabCtx : ViewContext
 }

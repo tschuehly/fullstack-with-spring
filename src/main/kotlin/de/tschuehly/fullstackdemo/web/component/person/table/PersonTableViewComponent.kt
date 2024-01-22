@@ -2,8 +2,8 @@ package de.tschuehly.fullstackdemo.web.component.person.table
 
 import de.tschuehly.fullstackdemo.core.person.PersonService
 import de.tschuehly.fullstackdemo.web.component.util.advancedTable.AdvancedTableViewComponent
+import de.tschuehly.fullstackdemo.web.component.util.advancedTable.AdvancedTableViewComponent.Table
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
-import de.tschuehly.spring.viewcomponent.core.toProperty
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 
 @ViewComponent
@@ -16,14 +16,15 @@ class PersonTableViewComponent(
             person.getPersonAsList()
         }
         val personTable = advancedTableViewComponent.render(
-            AdvancedTableViewComponent.Table(
+            Table(
                 listOf("Id", "First Name", "Last Name", "Phone Number", "Email", "Birth Date"),
                 personList,
                 "/component/person/modal"
             )
         )
-        return ViewContext(
-            "personTable" toProperty personTable
+        return PersonTableCtx(
+            personTable = personTable
         )
     }
+    data class PersonTableCtx(val personTable: ViewContext) : ViewContext
 }

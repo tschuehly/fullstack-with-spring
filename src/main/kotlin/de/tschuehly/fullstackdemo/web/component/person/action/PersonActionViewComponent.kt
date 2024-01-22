@@ -4,7 +4,6 @@ import de.tschuehly.fullstackdemo.core.person.Person
 import de.tschuehly.fullstackdemo.core.person.PersonService
 import de.tschuehly.spring.viewcomponent.core.action.PutViewAction
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
-import de.tschuehly.spring.viewcomponent.core.toProperty
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 import java.time.LocalDate
 
@@ -12,8 +11,8 @@ import java.time.LocalDate
 class PersonActionViewComponent(
     private val personService: PersonService
 ) {
-    fun render(personId: Int? = null) = ViewContext(
-        "person" toProperty getPerson(personId)
+    fun render(personId: Int? = null) = PersonActionCtx(
+        getPerson(personId)
     )
 
     fun getPerson(personId: Int?): PersonFormDTO {
@@ -29,6 +28,7 @@ class PersonActionViewComponent(
         return render(person.id);
     }
 
+    data class PersonActionCtx(val person: PersonFormDTO) : ViewContext
 
     class PersonFormDTO(
         val id: Int?,

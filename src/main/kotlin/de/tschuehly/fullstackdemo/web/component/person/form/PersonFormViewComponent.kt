@@ -5,24 +5,25 @@ import de.tschuehly.fullstackdemo.core.person.Person
 import de.tschuehly.fullstackdemo.core.person.PersonService
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
-import de.tschuehly.spring.viewcomponent.core.toProperty
 import java.time.LocalDate
 
 @ViewComponent
 class PersonFormViewComponent(
     private val personService: PersonService
 ) {
-    fun render(personId: Int? = null) = ViewContext(
-        "personPost" toProperty ApiConfig.Person.put,
-        "person" toProperty getPerson(personId)
+    fun render(personId: Int? = null) = PersonFormCtx(
+        ApiConfig.Person.put,
+        getPerson(personId)
     )
 
     fun getPerson(personId: Int?): PersonFormDTO {
         if (personId != null) {
             personService.getPerson(personId).also { return PersonFormDTO(it) }
         }
-        return PersonFormDTO(null,"", "", "", "", LocalDate.now())
+        return PersonFormDTO(null, "", "", "", "", LocalDate.now())
     }
+
+    data class PersonFormCtx(val personPost: String, val person: PersonFormDTO) : ViewContext
 
     class PersonFormDTO(
         val id: Int?,

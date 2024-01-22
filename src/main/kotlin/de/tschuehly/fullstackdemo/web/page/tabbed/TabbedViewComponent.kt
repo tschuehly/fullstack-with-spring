@@ -3,7 +3,6 @@ package de.tschuehly.fullstackdemo.web.page.tabbed
 import de.tschuehly.fullstackdemo.web.component.util.alpineTab.AlpineTabViewComponent
 import de.tschuehly.fullstackdemo.web.component.util.preactTab.PreactTabViewComponent
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
-import de.tschuehly.spring.viewcomponent.core.toProperty
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 
 @ViewComponent
@@ -11,8 +10,8 @@ class TabbedViewComponent(
     private val alpineTabViewComponent: AlpineTabViewComponent,
     private val preactTabViewComponent: PreactTabViewComponent
 ) {
-    fun render() = ViewContext(
-        "alpineTabViewComponent" toProperty alpineTabViewComponent.render(
+    fun render() = TabbedCtx(
+        alpineTabViewComponent.render(
             listOf(
                 AlpineTabViewComponent.Tab(
                     "AlpineTab1",
@@ -26,6 +25,10 @@ class TabbedViewComponent(
             )
 
         ),
-        "preactTabViewComponent" toProperty preactTabViewComponent.render()
+        preactTabViewComponent.render()
     )
+    data class TabbedCtx(
+        val alpineTabViewComponent: ViewContext,
+        val preactTabViewComponent: ViewContext
+    ) : ViewContext
 }

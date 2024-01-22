@@ -3,16 +3,16 @@
       xmlns:th="http://www.thymeleaf.org">
 
 <script src="/js/chart_2.9.3.min.js"></script>
-<!--/*@thymesVar id="barchartDetails" type="de.tschuehly.fullstackdemo.web.component.util.chart.ChartViewComponent.ChartDetails"*/-->
-<canvas id="barchart" th:width="${barchartDetails.width}" th:height="${barchartDetails.height}">
+<!--/*@thymesVar id="chartCtx" type="de.tschuehly.fullstackdemo.web.component.util.chart.ChartViewComponent.ChartCtx"*/-->
+<canvas id="barchart" th:width="${chartCtx.barchartDetails.width}" th:height="${chartCtx.barchartDetails.height}">
     <script th:inline="javascript">
         new Chart(document.currentScript.parentElement, {
-            type: /*[[${barchartDetails.type}]]*/'',
+            type: /*[[${chartCtx.barchartDetails.type}]]*/'',
             data: {
-                labels: /*[[${barchartDetails.labels}]]*/ [],
+                labels: /*[[${chartCtx.barchartDetails.labels}]]*/ [],
                 datasets: [{
-                    label: /*[[${barchartDetails.chartLabel}]]*/ '',
-                    data: /*[[${barchartDetails.data}]]*/ [],
+                    label: /*[[${chartCtx.barchartDetails.chartLabel}]]*/ '',
+                    data: /*[[${chartCtx.barchartDetails.data}]]*/ [],
                     borderWidth: 1
                 }]
             },
