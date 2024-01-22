@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "3.0.5"
-    id("io.spring.dependency-management") version "1.1.0"
+    id("org.springframework.boot") version "3.2.2"
+    id("io.spring.dependency-management") version "1.1.4"
     java
-    kotlin("jvm") version "1.7.22"
-    kotlin("plugin.spring") version "1.7.22"
+    kotlin("jvm") version "1.9.22"
+    kotlin("plugin.spring") version "1.9.22"
 }
 
 group = "de.tschuehly"
@@ -37,13 +37,10 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-    implementation("de.tschuehly:spring-view-component-thymeleaf:0.6.1-SNAPSHOT")
+    implementation("de.tschuehly:spring-view-component-thymeleaf:0.7.2")
 
-//    implementation("de.tschuehly:supabase-security-spring-boot-starter:0.2.5-SNAPSHOT")
-
-
-    implementation("org.webjars.npm:htmx.org:1.9.2")
-    implementation("org.webjars.npm:alpinejs:3.12.2")
+    implementation("org.webjars.npm:htmx.org:1.9.10")
+    implementation("org.webjars.npm:alpinejs:3.13.4")
 }
 
 tasks.withType<KotlinCompile> {
