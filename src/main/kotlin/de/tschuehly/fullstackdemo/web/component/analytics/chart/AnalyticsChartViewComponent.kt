@@ -10,21 +10,21 @@ class AnalyticsChartViewComponent(
     private val analyticsService: AnalyticsService,
     private val chartViewComponent: ChartViewComponent
 ) {
-    fun render(name: String): AnalyticsChartCtx {
-        return AnalyticsChartCtx(
+    fun render(name: String): AnalyticsChartContext {
+        return AnalyticsChartContext(
             chartViewComponent.render(
                 ChartViewComponent.ChartDetails(
-                    "line",
-                    400,
-                    200,
-                    name,
-                    analyticsService.getTimeStampsFor(name),
-                    analyticsService.getComputeTimesFor(name)
+                    type = "line",
+                    width = 400,
+                    height = 200,
+                    chartLabel = name,
+                    labels = analyticsService.getTimeStampsFor(name),
+                    data = analyticsService.getComputeTimesFor(name)
                 )
             )
         )
     }
-    data class AnalyticsChartCtx(
+    data class AnalyticsChartContext(
         val chartViewComponent: ViewContext
     ) : ViewContext
 }

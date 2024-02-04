@@ -29,27 +29,32 @@ class WebAnalyticAspect(
 //
 //    }
 
-    @Around(
-        "execution(* render(..)) && " +
-                "@within(de.tschuehly.spring.viewcomponent.core.component.ViewComponent)"
-    )
-    fun aroundComponent(joinPoint: ProceedingJoinPoint): Any? {
-        var returnValue: Any?
-        val elapsedTime = measureNanoTime {
-            returnValue = joinPoint.proceed()
-        }
-        val componentName = joinPoint.`this`.javaClass.simpleName.substringBefore("$$")
-        val dataPointList = analyticsService.getAnalyticsDataFor(componentName)
-        val requestCount = if (dataPointList.isEmpty()) 1 else dataPointList.last().requestCount + 1
-        dataPointList.add(
-            AnalyticsService.AnalyticDataPoint(
-                LocalDateTime.now(),
-                requestCount,
-                elapsedTime
-            )
-        )
-        analyticsService.saveAnalyticsDataFor(componentName, dataPointList)
-        return returnValue
+@Around(
+    "execution(de.tschuehly.spring.viewcomponent.core.IViewContext+ *(..)) && " +
+            "@within(de.tschuehly.spring.viewcomponent.core.component.ViewComponent)"
+)
+fun aroundComponent(joinPoint: ProceedingJoinPoint): Any? {
+    var returnValue: Any?
+    val elapsedTime = measureNanoTime {
+        returnValue = joinPoint.proceed()
     }
+    val componentName = joinPoint.`this`.javaClass.simpleName.substringBefore("$$")
+    val dataPointList = analyticsService.getAnalyticsDataFor(componentName)
+    val requestCount: Long
+    if (dataPointList.isEmpty()) {
+        requestCount = 1
+    } else {
+        requestCount = dataPointList.last().requestCount + 1
+    }
+    dataPointList.add(
+        AnalyticsService.AnalyticDataPoint(
+            LocalDateTime.now(),
+            requestCount,
+            elapsedTime
+        )
+    )
+    analyticsService.saveAnalyticsDataFor(componentName, dataPointList)
+    return returnValue
+}
 
 }
