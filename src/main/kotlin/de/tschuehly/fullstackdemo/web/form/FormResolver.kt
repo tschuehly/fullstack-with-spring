@@ -17,7 +17,7 @@ class FormResolver(
         val component = layoutComponents.stream()
             .filter { it: LayoutComponent -> it.canHandle(definition) }.findFirst()
             .orElseThrow { RuntimeException("FormNotImplementedException") }
-        return component.render(definition) { content: Content -> this.renderSlot(content) }
+        return component.render(definition, this::renderSlot)
     }
 
     fun renderSlot(content: Content): ViewContext {

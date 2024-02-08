@@ -1,8 +1,7 @@
-
-    <div style="border: red 2px solid; padding: 1rem;">
+<div style="border: red 2px solid; padding: 1rem;" xmlns:view="http://www.w3.org/1999/xhtml">
       <!--/*@thymesVar id="boxContent" type="de.tschuehly.fullstackdemo.web.form.layout.box.BoxComponent.BoxContent"*/-->
       <div th:each="slot : ${boxContent.definition.slots()}">
-        <div view:component="${boxContent.renderContent().apply(slot)}">
+        <div view:component="${boxContent.renderFunction.render(slot)}">
 
         </div>
       </div>
