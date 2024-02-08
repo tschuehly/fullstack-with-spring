@@ -1,0 +1,9 @@
+
+    <div style="border: red 2px solid; padding: 1rem;">
+      <!--/*@thymesVar id="boxContent" type="de.tschuehly.fullstackdemo.web.form.layout.box.BoxComponent.BoxContent"*/-->
+      <div th:each="slot : ${boxContent.definition.slots()}">
+        <div view:component="${boxContent.renderContent().apply(slot)}">
+
+        </div>
+      </div>
+    </div>
