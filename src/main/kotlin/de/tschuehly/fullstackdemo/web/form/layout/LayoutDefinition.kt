@@ -4,5 +4,4 @@ import de.tschuehly.fullstackdemo.web.form.Content
 
 
 interface LayoutDefinition : Content {
-    fun slots(): List<Content>
 }

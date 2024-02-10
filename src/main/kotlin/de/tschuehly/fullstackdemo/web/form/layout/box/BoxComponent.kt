@@ -9,15 +9,15 @@ import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 @ViewComponent
 class BoxComponent : LayoutComponent {
     override fun canHandle(definition: LayoutDefinition): Boolean {
-        return definition is BoxLayoutDefinition
+        return definition is BoxDefinition
     }
 
     override fun render(definition: LayoutDefinition, renderContent: RenderFunction): ViewContext {
-        return BoxContent(definition as BoxLayoutDefinition, renderContent)
+        return BoxContent(definition as BoxDefinition, renderContent)
     }
 
     data class BoxContent(
-        val definition: BoxLayoutDefinition,
+        val definition: BoxDefinition,
         val renderFunction: RenderFunction
     ) : ViewContext
 }
