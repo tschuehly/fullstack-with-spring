@@ -17,6 +17,5 @@ class TextComponent : FieldComponent {
         return TextContext(text)
     }
 
-    @JvmRecord
-    private data class TextContext(val text: Text) : ViewContext
+    data class TextContext(val text: Text) : ViewContext
 }
