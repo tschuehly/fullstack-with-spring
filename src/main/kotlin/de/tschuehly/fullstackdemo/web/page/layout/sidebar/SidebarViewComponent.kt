@@ -9,7 +9,7 @@ class SidebarViewComponent {
 
     fun render(activeTab: ActiveTab?): ViewContext {
         return SidebarCtx(
-            activeTab, ActiveTab.values().toList()
+            activeTab, ActiveTab.entries
         )
     }
 
@@ -23,8 +23,6 @@ class SidebarViewComponent {
         Tables("Tables", "fa-table", tablesHref),
         Forms("Forms", "fa-align-left", formsHref),
         TabbedContent("Tabbed Content", "fa-tablet-alt", tabbedHref),
-        Calendar("Calendar", "fa-calendar", calendarHref),
-
     }
 
     companion object {
@@ -32,7 +30,6 @@ class SidebarViewComponent {
         const val tablesHref = "/tables"
         const val formsHref = "/forms"
         const val tabbedHref = "/tabbed"
-        const val calendarHref = "/calendar"
     }
 
 }

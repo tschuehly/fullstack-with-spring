@@ -17,6 +17,5 @@ class ButtonComponent : FieldComponent {
         return ButtonContext(button)
     }
 
-    @JvmRecord
-    private data class ButtonContext(val button: Button) : ViewContext
+    data class ButtonContext(val button: Button) : ViewContext
 }

@@ -1,6 +1,5 @@
 package de.tschuehly.fullstackdemo.web.page
 
-import de.tschuehly.fullstackdemo.web.page.calendar.CalendarViewComponent
 import de.tschuehly.fullstackdemo.web.page.dashboard.DashboardViewComponent
 import de.tschuehly.fullstackdemo.web.page.form.FormViewComponent
 import de.tschuehly.fullstackdemo.web.page.layout.LayoutViewComponent
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class PageController(
     private val dashboardViewComponent: DashboardViewComponent,
-    private val calendarViewComponent: CalendarViewComponent,
     private val tabbedViewComponent: TabbedViewComponent,
     private val tableExampleViewComponent: TableExampleViewComponent,
     private val formViewComponent: FormViewComponent,
@@ -44,11 +42,6 @@ class PageController(
         tabbedViewComponent.render()
     )
 
-    @GetMapping(SidebarViewComponent.calendarHref)
-    fun calendar() = layoutViewComponent.render(
-        ActiveTab.Calendar,
-        calendarViewComponent.render()
-    )
 }
 
 
