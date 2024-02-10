@@ -7,11 +7,11 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
-class FormController(val formResolver: FormResolver) {
+class FormController(val formStrategy: FormStrategy) {
 
     @GetMapping("/form")
     fun form(): ViewContext {
-        return formResolver.render(
+        return formStrategy.render(
             Box(
                 Button("Hello JUG Stuttgart")
             )

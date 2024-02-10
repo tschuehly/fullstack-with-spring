@@ -8,7 +8,7 @@ import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 import org.springframework.stereotype.Service
 
 @Service
-class FormResolver(
+class FormStrategy(
     private val layoutComponents: List<LayoutComponent>,
     private val fieldComponents: List<FieldComponent>
 ) {
@@ -31,6 +31,4 @@ class FormResolver(
         }
         throw RuntimeException("InvalidFormException")
     }
-
-
 }
