@@ -1,13 +1,13 @@
-package de.tschuehly.fullstackdemo.web.form.content.text
+package de.tschuehly.fullstackdemo.web.form.field.text
 
-import de.tschuehly.fullstackdemo.web.form.content.Content
-import de.tschuehly.fullstackdemo.web.form.content.ContentComponent
-import de.tschuehly.fullstackdemo.web.form.content.FieldType
+import de.tschuehly.fullstackdemo.web.form.Content
+import de.tschuehly.fullstackdemo.web.form.field.FieldComponent
+import de.tschuehly.fullstackdemo.web.form.field.FieldType
 import de.tschuehly.spring.viewcomponent.core.component.ViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 
 @ViewComponent
-class TextComponent : ContentComponent {
+class TextComponent : FieldComponent {
     override fun canHandle(type: FieldType): Boolean {
         return FieldType.TEXT == type
     }

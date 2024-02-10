@@ -1,6 +1,6 @@
-package de.tschuehly.fullstackdemo.web.form.content
+package de.tschuehly.fullstackdemo.web.form
 
-import de.tschuehly.fullstackdemo.web.form.content.Content
+import de.tschuehly.fullstackdemo.web.form.Content
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 
 fun interface RenderFunction {

@@ -1,7 +1,8 @@
 package de.tschuehly.fullstackdemo.web.form.layout
 
-import de.tschuehly.fullstackdemo.web.form.content.Content
+import de.tschuehly.fullstackdemo.web.form.Content
 
-interface LayoutDefinition<T : Content> : Content {
-    fun slots(): List<T>
+
+interface LayoutDefinition : Content {
+    fun slots(): List<Content>
 }
