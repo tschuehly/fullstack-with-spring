@@ -2,18 +2,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--/*@thymesVar id="toastCtx" type="de.tschuehly.fullstackdemo.web.component.util.toast.ToastViewComponent.ToastCtx"*/-->
-<div id="toast-element" class="fixed bg-gray-800 w-1/2 bottom-8 left-1/4 py-4 px-8 text-center text-white">
+<div id="toast-element">
   <script th:inline="javascript" >
+    function hideToast(){
+      document.getElementById('toast-element').style.display = 'none'
+    }
     setTimeout(() =>
-            document.getElementById('toast-element').style.display = 'none',
-            [[${toastCtx.duration}]]
+        hideToast(),
+        [[${toastContext.duration}]]
     )
   </script>
 
-  <div class="flex justify-between">
-    <span th:text="${toastCtx.message}"></span>
-    <button class="strong"
-            onclick="document.getElementById('toast-element').style.display = 'none'">
+  <div>
+    <span th:text="${toastContext.message}"></span>
+    <button onclick="hideToast()">
       X
     </button>
   </div>
