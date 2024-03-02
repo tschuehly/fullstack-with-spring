@@ -1,35 +1,41 @@
 # Fullstack with Spring
 
-This is the repository that contains all my resources and demos for fullstack with Spring
+This is the repository that contains all my resources and demos for fullstack with Spring.
 
 The demo is hosted online [fullstack.tschuehly.de](https://fullstack.tschuehly.de/)
 
-You can find the two libraries I created and used in the demo on GitHub:
-- [github.com/tschuehly/spring-view-component](https://github.com/tschuehly/spring-view-component)
+My presentations revolve mainly around Spring ViewComponent:
+[github.com/tschuehly/spring-view-component](https://github.com/tschuehly/spring-view-component)
 
-- [github.com/tschuehly/supabase-security-spring-boot-starter](https://github.com/tschuehly/supabase-security-spring-boot-starter)
+# 2024
 
-## JUG Paderborn 2023
+### JUG Stuttgart
+**[Putting the View of MVC into a Spring Bean with htmx](https://www.jugs.org/veranstaltungen/putting-the-view-of-mvc-into-a-spring-bean-with-htmx/)**
 
-### Joyful server-side full stack web development with Spring ViewComponent
+You can find the code of the declarative UI approach here:
+[github.com/tschuehly/svc-ui](https://github.com/tschuehly/svc-ui)
 
-To enable the supabase-security starter you need to uncomment the dependency in the build.gradle.kts and uncomment the ExceptionController.
+Slides: [pptx](slides/jug-stuttgart/putting-the-view-of-MVC-into-a-spring-bean-with-htmx.pptx), 
+[pdf](slides/jug-stuttgart/putting-the-view-of-MVC-into-a-spring-bean-with-htmx.pdf), 
+[mp4](slides/jug-stuttgart/putting-the-view-of-MVC-into-a-spring-bean-with-htmx.mp4)
 
-Add these env variables
-````
-SUPABASE_ANON_KEY=
-SUPABASE_DATABASE_PW=
-SUPABASE_JWT_SECRET=
-````
+# 2023
 
-## Spring I/O 2023
+### JUG Paderborn
+**[Joyful server-side full stack web development with Spring ViewComponent](https://jug-pb.gitlab.io/blog/2023/rapid-server-side-development.html)**
 
-### RAPID SERVER-SIDE FULL STACK WEB DEVELOPMENT WITH VIEWCOMPONENTS AND HTMX
+joyful-server-side-full-stack-web-development-with-spring-viewcomponent
 
-This is the demo repository of the talk I did at [SPRING I/O 2023](https://2023.springio.net/sessions/rapid-server-side-full-stack-web-development-with-viewcomponents-and-htmx/) you can find it in the [spring-io-2023](https://github.com/tschuehly/fullstack-with-spring/tree/spring-io-2023) branch.
+Slides: [pptx](slides/jug-paderborn/joyful-server-side-full-stack-web-development-with-spring-viewcomponent.pptx),
+[pdf](slides/jug-paderborn/joyful-server-side-full-stack-web-development-with-spring-viewcomponent.pdf)
 
-The presentation is here as [pptx](spring-io/spring-io-rapid-server-side-fullstack.pptx) and [pdf](spring-io/spring-io-rapid-server-side-fullstack.pdf)
+### Spring I/O 2023
+**[Rapid server side full stack web development with ViewComponents and htmx](https://2023.springio.net/sessions/rapid-server-side-full-stack-web-development-with-viewcomponents-and-htmx/)**
 
+Recording: [youtube.com/watch?v=DPAtQU-erM4](https://www.youtube.com/watch?v=DPAtQU-erM4)
 
+Code: [spring-io-2023](https://github.com/tschuehly/fullstack-with-spring/tree/spring-io-2023)
 
+Slides: [pptx](slides/spring-io-2023/spring-io-rapid-server-side-fullstack.pptx), 
+[pdf](slides/spring-io-2023/spring-io-rapid-server-side-fullstack.pdf)
 
