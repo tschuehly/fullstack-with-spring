@@ -17,7 +17,6 @@ You can find the code of the declarative UI approach here:
 
 Slides: [pptx](slides/jug-stuttgart/putting-the-view-of-MVC-into-a-spring-bean-with-htmx.pptx), 
 [pdf](slides/jug-stuttgart/putting-the-view-of-MVC-into-a-spring-bean-with-htmx.pdf), 
-[mp4](slides/jug-stuttgart/putting-the-view-of-MVC-into-a-spring-bean-with-htmx.mp4)
 
 # 2023
 
