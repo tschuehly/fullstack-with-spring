@@ -36,6 +36,13 @@ jobs:
           label=$(docker image inspect -f '{{index .Config.Labels "service"}}' "$IMAGE:${{ github.sha }}")
           echo "service label: '$label'"
           test "$label" = fullstack-with-spring
+      - name: Smoke test native image
+        run: |
+          docker run -d --name smoke -p 8080:8080 "$IMAGE:${{ github.sha }}"
+          for i in $(seq 30); do curl -fs localhost:8080/ >/dev/null && break; sleep 1; done
+          for path in / /tables /forms "/lineChartComponent?name=Sales"; do
+            curl -fsS -o /dev/null -w "%{http_code} $path\n" "localhost:8080$path" || { docker logs smoke | tail -40; exit 1; }
+          done
       - if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: docker save "$IMAGE:${{ github.sha }}" | gzip > image.tar.gz
       - if: github.event_name == 'push' && github.ref == 'refs/heads/master'

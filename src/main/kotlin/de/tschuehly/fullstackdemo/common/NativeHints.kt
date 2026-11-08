@@ -3,6 +3,8 @@ package de.tschuehly.fullstackdemo.common
 import de.tschuehly.fullstackdemo.web.component.person.form.PersonFormViewComponent
 import de.tschuehly.spring.viewcomponent.thymeleaf.ViewContext
 import org.springframework.aot.hint.BindingReflectionHintsRegistrar
+import org.springframework.aot.hint.MemberCategory
+import org.springframework.aot.hint.TypeReference
 import org.springframework.aot.hint.RuntimeHints
 import org.springframework.aot.hint.RuntimeHintsRegistrar
 import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider
@@ -27,6 +29,8 @@ class NativeHints : RuntimeHintsRegistrar {
         }
         val contexts = scanner.findCandidateComponents("de.tschuehly.fullstackdemo")
             .map { Class.forName(it.beanClassName, false, classLoader) }
+        // Kotlin reflection resolves emptyList()'s class when a chart has no data (/lineChartComponent?name=Sales).
+        hints.reflection().registerType(TypeReference.of("kotlin.collections.EmptyList"), *MemberCategory.entries.toTypedArray())
         BindingReflectionHintsRegistrar().registerReflectionHints(
             hints.reflection(), *(contexts + PersonFormViewComponent.PersonFormDTO::class.java).toTypedArray()
         )
