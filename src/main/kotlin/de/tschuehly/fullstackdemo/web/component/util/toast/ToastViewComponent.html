@@ -9,12 +9,12 @@
     }
     setTimeout(() =>
         hideToast(),
-        [[${toastContext.duration}]]
+        [[${toastCtx.duration}]]
     )
   </script>
 
   <div>
-    <span th:text="${toastContext.message}"></span>
+    <span th:text="${toastCtx.message}"></span>
     <button onclick="hideToast()">
       X
     </button>
