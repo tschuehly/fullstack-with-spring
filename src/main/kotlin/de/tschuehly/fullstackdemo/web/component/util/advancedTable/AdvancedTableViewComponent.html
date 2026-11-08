@@ -23,7 +23,7 @@
           class="text-left py-3 px-4"></td>
       <!--/*@thymesVar id="advancedTableCtx" type="de.tschuehly.fullstackdemo.web.component.util.advancedTable.AdvancedTableViewComponent.AdvancedTableCtx"*/-->
       <td th:if="${advancedTableCtx.table.editComponentLink != ''}" class="text-left py-3 px-4">
-        <button th:hx-get="${advancedTableCtx.table.editComponentLink} + '/' +${tableRow.get(0)}" hx-target="#editArea">
+        <button th:hx-get="${advancedTableCtx.table.editComponentLink} + '/' +${tableRow[0]}" hx-target="#editArea">
           <i class="fas fa-pen mr-3"></i>
         </button>
       </td>
